@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BRAND } from "@/lib/brand";
@@ -16,14 +17,17 @@ export function Header() {
         <Link
           href="/"
           aria-label={`${BRAND.name} home`}
-          className="group flex items-baseline gap-2"
+          className="group flex items-center gap-2"
         >
-          <span className="font-[family-name:var(--font-display)] text-3xl leading-none text-foreground transition-colors group-hover:text-primary sm:text-4xl">
-            Adora
-          </span>
-          <span className="hidden text-[10px] uppercase tracking-[0.25em] text-muted-foreground sm:inline">
-            Lashes &amp; Brows
-          </span>
+          <Image
+            src="/brand/logo.png"
+            alt={BRAND.name}
+            width={56}
+            height={56}
+            priority
+            className="h-12 w-12 transition-transform group-hover:scale-[1.03] sm:h-14 sm:w-14"
+          />
+          <span className="sr-only">{BRAND.name}</span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">

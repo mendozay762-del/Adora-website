@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BRAND } from "@/lib/brand";
@@ -68,26 +69,19 @@ export function Hero() {
         </div>
 
         <div className="relative lg:col-span-5">
-          <div className="relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden rounded-2xl border border-accent/30 bg-gradient-to-br from-primary/20 via-card to-background shadow-[0_0_60px_-15px_oklch(0.62_0.24_305/0.4)]">
+          <div className="relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden rounded-2xl border border-accent/30 shadow-[0_0_60px_-15px_oklch(0.62_0.24_305/0.4)]">
+            <Image
+              src="/brand/headshot.jpg"
+              alt="Adora, lash and brow artist, holding lash tweezers in her Dallas studio"
+              fill
+              priority
+              sizes="(min-width: 1024px) 28rem, (min-width: 640px) 24rem, 100vw"
+              className="object-cover object-top"
+            />
             <div
               aria-hidden
-              className="absolute inset-0 opacity-50"
-              style={{
-                background:
-                  "radial-gradient(circle at 50% 30%, oklch(0.62 0.24 305 / 0.35), transparent 70%)",
-              }}
+              className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent"
             />
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-center">
-              <div className="font-[family-name:var(--font-display)] text-[7rem] leading-none text-foreground/90">
-                Adora
-              </div>
-              <div className="text-[10px] uppercase tracking-[0.4em] text-accent">
-                Lashes &amp; Brows
-              </div>
-              <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/40 px-3 py-1 text-[10px] uppercase tracking-widest text-muted-foreground backdrop-blur-sm">
-                Portrait coming soon
-              </div>
-            </div>
           </div>
         </div>
       </div>

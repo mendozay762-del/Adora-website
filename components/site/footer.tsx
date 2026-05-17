@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Phone, MapPin } from "lucide-react";
 import { BRAND } from "@/lib/brand";
@@ -41,13 +42,14 @@ export function Footer() {
     <footer className="border-t border-border/60 bg-background">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-3">
         <div>
-          <div className="font-[family-name:var(--font-display)] text-4xl leading-none">
-            Adora
-          </div>
-          <div className="mt-1 text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-            Lashes &amp; Brows
-          </div>
-          <p className="mt-4 max-w-xs text-sm text-muted-foreground">
+          <Image
+            src="/brand/logo.png"
+            alt={BRAND.name}
+            width={120}
+            height={120}
+            className="h-24 w-24"
+          />
+          <p className="mt-6 max-w-xs text-sm text-muted-foreground">
             {BRAND.pillars.join(" · ")}.
           </p>
         </div>
