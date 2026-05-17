@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 const BEFORE_RULES = [
   "Please arrive 15 minutes before your appointment — I like a thorough consultation to best serve you.",
   "Come with a clean face — no makeup, mascara, contacts, or oil-based products around your eyes.",
@@ -51,6 +53,16 @@ export function BeforeAppointment() {
             with your booking confirmation, or available to sign in studio
             when you arrive.
           </p>
+          <div className="mt-8 flex justify-center">
+            <Button
+              size="lg"
+              disabled
+              aria-disabled="true"
+              className="cursor-not-allowed rounded-full bg-primary/40 px-8 text-primary-foreground/70"
+            >
+              Go to Consent Form &mdash; Coming Soon
+            </Button>
+          </div>
         </div>
       </div>
     </section>
