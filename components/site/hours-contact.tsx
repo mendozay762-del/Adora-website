@@ -8,14 +8,24 @@ function EditorialHeading({
   secondary: string;
 }) {
   return (
-    <h2 className="text-center">
-      <span className="block font-[family-name:var(--font-editorial)] text-5xl font-light tracking-[0.08em] text-foreground sm:text-6xl">
-        {primary}
-      </span>
-      <span className="-mt-3 block font-[family-name:var(--font-display)] text-5xl text-accent sm:-mt-4 sm:text-6xl">
-        {secondary}
-      </span>
-    </h2>
+    <div className="flex flex-col items-center">
+      <div
+        aria-hidden
+        className="h-px w-48 bg-gradient-to-r from-transparent via-gold/70 to-transparent"
+      />
+      <h2 className="mt-6 text-center">
+        <span className="block font-[family-name:var(--font-editorial)] text-5xl font-light tracking-[0.08em] text-foreground sm:text-6xl">
+          {primary}
+        </span>
+        <span className="-mt-3 block font-[family-name:var(--font-display)] text-5xl text-accent sm:-mt-4 sm:text-6xl">
+          {secondary}
+        </span>
+      </h2>
+      <div
+        aria-hidden
+        className="mt-6 h-px w-48 bg-gradient-to-r from-transparent via-gold/70 to-transparent"
+      />
+    </div>
   );
 }
 

@@ -14,14 +14,24 @@ export function BeforeAppointment() {
       aria-labelledby="before-heading"
     >
       <div className="mx-auto max-w-5xl">
-        <h2 id="before-heading" className="text-center">
-          <span className="block text-[10px] uppercase tracking-[0.5em] text-muted-foreground">
-            Before Your
-          </span>
-          <span className="mt-4 block font-[family-name:var(--font-editorial)] text-5xl font-light tracking-[0.1em] text-foreground sm:text-6xl">
-            APPOINTMENT
-          </span>
-        </h2>
+        <div className="flex flex-col items-center">
+          <div
+            aria-hidden
+            className="h-px w-48 bg-gradient-to-r from-transparent via-gold/70 to-transparent"
+          />
+          <h2 id="before-heading" className="mt-6 text-center">
+            <span className="block text-[10px] uppercase tracking-[0.5em] text-muted-foreground">
+              Before Your
+            </span>
+            <span className="mt-4 block font-[family-name:var(--font-editorial)] text-5xl font-light tracking-[0.1em] text-foreground sm:text-6xl">
+              APPOINTMENT
+            </span>
+          </h2>
+          <div
+            aria-hidden
+            className="mt-6 h-px w-48 bg-gradient-to-r from-transparent via-gold/70 to-transparent"
+          />
+        </div>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2">
           {BEFORE_RULES.map((rule, i) => (

@@ -35,14 +35,24 @@ export function BookingPolicies() {
       aria-labelledby="policies-heading"
     >
       <div className="mx-auto max-w-6xl">
-        <h2 id="policies-heading" className="text-center">
-          <span className="block font-[family-name:var(--font-editorial)] text-5xl font-light tracking-[0.08em] text-foreground sm:text-6xl">
-            BOOKING
-          </span>
-          <span className="-mt-3 block font-[family-name:var(--font-display)] text-5xl text-accent sm:-mt-4 sm:text-6xl">
-            Policies
-          </span>
-        </h2>
+        <div className="flex flex-col items-center">
+          <div
+            aria-hidden
+            className="h-px w-48 bg-gradient-to-r from-transparent via-gold/70 to-transparent"
+          />
+          <h2 id="policies-heading" className="mt-6 text-center">
+            <span className="block font-[family-name:var(--font-editorial)] text-5xl font-light tracking-[0.08em] text-foreground sm:text-6xl">
+              BOOKING
+            </span>
+            <span className="-mt-3 block font-[family-name:var(--font-display)] text-5xl text-accent sm:-mt-4 sm:text-6xl">
+              Policies
+            </span>
+          </h2>
+          <div
+            aria-hidden
+            className="mt-6 h-px w-48 bg-gradient-to-r from-transparent via-gold/70 to-transparent"
+          />
+        </div>
 
         <div className="mt-16 grid gap-10 sm:grid-cols-2 md:grid-cols-4 md:gap-0">
           {POLICIES.map((policy, i) => (

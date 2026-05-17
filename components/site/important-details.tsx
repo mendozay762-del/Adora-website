@@ -30,12 +30,22 @@ export function ImportantDetails() {
       aria-labelledby="important-heading"
     >
       <div className="mx-auto max-w-6xl">
-        <h2
-          id="important-heading"
-          className="text-center font-[family-name:var(--font-editorial)] text-5xl font-light tracking-[0.12em] text-foreground sm:text-6xl"
-        >
-          IMPORTANT
-        </h2>
+        <div className="flex flex-col items-center">
+          <div
+            aria-hidden
+            className="h-px w-48 bg-gradient-to-r from-transparent via-gold/70 to-transparent"
+          />
+          <h2
+            id="important-heading"
+            className="mt-6 text-center font-[family-name:var(--font-editorial)] text-5xl font-light tracking-[0.12em] text-foreground sm:text-6xl"
+          >
+            IMPORTANT
+          </h2>
+          <div
+            aria-hidden
+            className="mt-6 h-px w-48 bg-gradient-to-r from-transparent via-gold/70 to-transparent"
+          />
+        </div>
 
         <div className="mt-16 grid gap-10 sm:grid-cols-2 md:grid-cols-4 md:gap-0">
           {ITEMS.map((item, i) => (
