@@ -35,6 +35,23 @@ export function BeforeAppointment() {
         <p className="mt-10 text-center text-[10px] uppercase tracking-[0.4em] text-accent">
           Absolutely no extra guest &middot; No phone use during appointment
         </p>
+
+        <div className="mt-16 rounded-md border border-accent/30 bg-card/40 px-6 py-10 text-center shadow-[0_0_60px_-30px_oklch(0.62_0.24_305/0.5)] sm:px-10 sm:py-12">
+          <p className="text-[10px] uppercase tracking-[0.5em] text-accent">
+            For First-Time Clients
+          </p>
+          <h3 className="mt-4 font-[family-name:var(--font-editorial)] text-3xl font-light tracking-[0.1em] text-foreground sm:text-4xl">
+            PLEASE SIGN CONSENT FORM
+          </h3>
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
+            Every new client is required to complete a lash and brow consent
+            form before service begins. It covers your health history,
+            allergies, and aftercare acknowledgment &mdash; it protects you
+            and ensures your appointment runs smoothly. The form will be sent
+            with your booking confirmation, or available to sign in studio
+            when you arrive.
+          </p>
+        </div>
       </div>
     </section>
   );
