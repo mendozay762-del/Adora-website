@@ -56,4 +56,25 @@ export const BRAND = {
     default: "en" as const,
     supported: ["en", "es"] as const,
   },
+
+  hours: {
+    effectiveDate: "June 1, 2026",
+    schedule: [
+      {
+        days: "Monday – Thursday",
+        value: "5:00 PM & 8:00 PM",
+        note: "Two appointments daily",
+      },
+      {
+        days: "Friday – Saturday",
+        value: "7:00 AM – 8:00 PM",
+        note: "Flexible booking window",
+      },
+      {
+        days: "Sunday",
+        value: "Closed",
+        note: null,
+      },
+    ],
+  },
 } as const;

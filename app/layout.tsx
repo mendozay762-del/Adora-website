@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Italianno } from "next/font/google";
+import { Cormorant_Garamond, Geist, Geist_Mono, Italianno } from "next/font/google";
 import "./globals.css";
 import { BRAND } from "@/lib/brand";
 
@@ -16,6 +16,14 @@ const geistMono = Geist_Mono({
 const italianno = Italianno({
   variable: "--font-italianno",
   weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const cormorant = Cormorant_Garamond({
+  variable: "--font-editorial",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -45,7 +53,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`dark ${geistSans.variable} ${geistMono.variable} ${italianno.variable}`}
+      className={`dark ${geistSans.variable} ${geistMono.variable} ${italianno.variable} ${cormorant.variable}`}
     >
       <body className="font-sans antialiased bg-background text-foreground">
         {children}

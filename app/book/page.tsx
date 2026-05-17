@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Footer } from "@/components/site/footer";
-import { Header } from "@/components/site/header";
-import { PromoBanner } from "@/components/site/promo-banner";
+import { TopNav } from "@/components/site/top-nav";
 import { Button } from "@/components/ui/button";
 import { BRAND } from "@/lib/brand";
 
@@ -10,26 +9,26 @@ export const metadata = { title: "Book" };
 export default function BookPage() {
   return (
     <>
-      <PromoBanner />
-      <Header />
+      <TopNav />
       <main className="mx-auto max-w-3xl px-6 py-24">
-        <h1 className="font-[family-name:var(--font-display)] text-7xl text-foreground">
-          Book
+        <h1 className="font-[family-name:var(--font-editorial)] text-6xl tracking-[0.08em] text-foreground sm:text-7xl">
+          BOOK
         </h1>
         <p className="mt-4 text-base text-muted-foreground">
-          The 3-step Vagaro → Zelle → DM flow comes online in Phase 2. For now
-          you can start on Vagaro and message Adora directly.
+          The 3-step Vagaro &rarr; Zelle &rarr; DM flow comes online in Phase 2.
+          Vagaro setup is still in progress &mdash; the button below activates
+          once it&rsquo;s live. For now, DM &ldquo;LASHES&rdquo; on Instagram
+          to reserve.
         </p>
 
         <div className="mt-10 flex flex-wrap gap-4">
-          <Button asChild size="lg" className="rounded-full px-7">
-            <a
-              href={BRAND.bookingUrl}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              Book on Vagaro
-            </a>
+          <Button
+            size="lg"
+            disabled
+            aria-disabled="true"
+            className="cursor-not-allowed rounded-full bg-primary/40 px-7 text-primary-foreground/70"
+          >
+            Book on Vagaro &mdash; Coming Soon
           </Button>
           <Button
             asChild
