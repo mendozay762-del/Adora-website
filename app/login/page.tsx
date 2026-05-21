@@ -6,7 +6,7 @@ export default function LoginPage() {
 
   return (
     <main className="flex min-h-screen items-center justify-center px-6 py-16">
-      <div className="w-full max-w-md rounded-2xl border border-border/60 bg-card p-8 shadow-[0_0_60px_-20px_oklch(0.62_0.24_305/0.3)]">
+      <div className="w-full max-w-md rounded-2xl border border-border/60 bg-card p-8 shadow-[0_0_60px_-20px_oklch(0.62_0.24_300/0.3)]">
         <h1 className="font-[family-name:var(--font-display)] text-5xl text-foreground">
           Admin
         </h1>

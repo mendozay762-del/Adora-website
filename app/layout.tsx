@@ -70,7 +70,7 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`dark ${geistSans.variable} ${geistMono.variable} ${italianno.variable} ${cormorant.variable}`}
     >
-      <body className="font-sans antialiased bg-background text-foreground">
+      <body className="font-sans antialiased bg-background text-foreground overflow-x-clip">
         {children}
       </body>
     </html>

@@ -49,7 +49,7 @@ export function BeforeAppointment() {
           Absolutely no extra guest &middot; No phone use during appointment
         </p>
 
-        <div className="mt-16 rounded-md border border-accent/30 bg-card/40 px-6 py-10 text-center shadow-[0_0_60px_-30px_oklch(0.62_0.24_305/0.5)] sm:px-10 sm:py-12">
+        <div className="mt-16 rounded-md border border-accent/30 bg-card/40 px-6 py-10 text-center shadow-[0_0_60px_-30px_oklch(0.62_0.24_300/0.5)] sm:px-10 sm:py-12">
           <p className="text-[10px] uppercase tracking-[0.5em] text-accent">
             For First-Time Clients
           </p>
