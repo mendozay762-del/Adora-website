@@ -3,7 +3,11 @@ import { InstagramIcon } from "@/components/site/icons";
 import { Button } from "@/components/ui/button";
 import { BRAND } from "@/lib/brand";
 
-const TRIPTYCH_LABELS = ["I", "II", "III"] as const;
+const PANELS = [
+  { src: "/brand/IMG_0454.jpeg", alt: "Dramatic volume lash set, close up" },
+  { src: "/brand/IMG_7763.jpeg", alt: "Wispy volume lash extensions on an open eye" },
+  { src: "/brand/IMG_0363.jpeg", alt: "Fresh lash and brow set on a client" },
+] as const;
 
 export function HeroTriptych() {
   return (
@@ -12,45 +16,40 @@ export function HeroTriptych() {
       aria-label={`${BRAND.name} hero`}
     >
       <div className="grid h-[78vh] min-h-[560px] grid-cols-1 sm:h-[82vh] sm:grid-cols-3">
-        {TRIPTYCH_LABELS.map((label, i) => (
+        {PANELS.map((panel, i) => (
           <div
-            key={label}
+            key={panel.src}
             className={`relative overflow-hidden border-r border-border/30 last:border-r-0 ${
               i === 1 ? "" : "hidden sm:block"
             }`}
           >
-            <div
-              aria-hidden
-              className="absolute inset-0"
-              style={{
-                background:
-                  i === 1
-                    ? "radial-gradient(ellipse at center, oklch(0.16 0.04 300) 0%, oklch(0.08 0.02 300) 70%)"
-                    : i === 0
-                      ? "linear-gradient(165deg, oklch(0.12 0.04 300) 0%, oklch(0.07 0.015 300) 100%)"
-                      : "linear-gradient(195deg, oklch(0.10 0.03 300) 0%, oklch(0.07 0.015 300) 100%)",
-              }}
+            <Image
+              src={panel.src}
+              alt={panel.alt}
+              fill
+              priority={i === 1}
+              sizes="(min-width: 640px) 34vw, 100vw"
+              className="object-cover"
             />
             <div
               aria-hidden
-              className="absolute inset-0 opacity-30"
+              className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/20 to-background/70"
+            />
+            <div
+              aria-hidden
+              className="absolute inset-0 opacity-25"
               style={{
                 background:
-                  "radial-gradient(circle at 50% 40%, oklch(0.62 0.24 300 / 0.25), transparent 60%)",
+                  "radial-gradient(circle at 50% 40%, oklch(0.62 0.24 300 / 0.22), transparent 65%)",
               }}
             />
-            <div className="absolute inset-x-0 bottom-6 flex justify-center">
-              <span className="rounded-full border border-accent/30 bg-background/40 px-3 py-1 text-[9px] uppercase tracking-[0.4em] text-muted-foreground/70 backdrop-blur-sm">
-                Image {label}
-              </span>
-            </div>
           </div>
         ))}
       </div>
 
       {/* Overlay center column with brand mark + title */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center px-4">
-        <div className="flex w-full max-w-md flex-col items-center gap-6 bg-background/40 px-6 py-10 backdrop-blur-md sm:max-w-lg sm:gap-8 sm:px-10 sm:py-14">
+        <div className="flex w-full max-w-md flex-col items-center gap-6 rounded-sm bg-background/55 px-6 py-10 backdrop-blur-md sm:max-w-lg sm:gap-8 sm:px-10 sm:py-14">
           <Image
             src="/brand/logo.png"
             alt={BRAND.name}
