@@ -6,7 +6,10 @@ export const BRAND = {
 
   booking: {
     method: "instagram-dm" as const,
-    dmUrl: "https://ig.me/m/adora.lashesandbrows",
+    // Profile URL, not ig.me/m/ — the ig.me DM deep link renders a blank
+    // page on desktop / when logged out. The profile reliably loads and
+    // its "Message" button is one tap from a DM.
+    dmUrl: "https://instagram.com/adora.lashesandbrows",
     keyword: "LASHES",
   },
 
