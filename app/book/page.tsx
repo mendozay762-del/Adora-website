@@ -37,21 +37,12 @@ export default function BookPage() {
               Book via Instagram
             </a>
           </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="rounded-full border-accent/40 px-7"
-          >
-            <a href={`tel:${BRAND.contact.phone.replace(/[^0-9]/g, "")}`}>
-              Call {BRAND.contact.phone}
-            </a>
-          </Button>
         </div>
 
         <p className="mt-6 text-xs text-muted-foreground">
-          A ${BRAND.deposit} Zelle deposit to {BRAND.contact.phone} secures your
-          slot. Non-refundable. 48-hour cancellation notice required.
+          A ${BRAND.deposit} Zelle deposit secures your slot &mdash; payment
+          details are shared when you book. Non-refundable. 48-hour
+          cancellation notice required.
         </p>
 
         <div className="mt-12">

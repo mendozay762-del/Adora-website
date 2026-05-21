@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { InstagramIcon, TikTokIcon } from "@/components/site/icons";
 import { BRAND } from "@/lib/brand";
 
@@ -38,15 +38,6 @@ export function Footer() {
                 {BRAND.address.city}, {BRAND.address.state}{" "}
                 {BRAND.address.zip}
               </div>
-            </div>
-            <div className="mt-3 flex items-center gap-2">
-              <Phone className="size-4 shrink-0 text-accent/80" />
-              <a
-                href={`tel:${BRAND.contact.phone.replace(/[^0-9]/g, "")}`}
-                className="hover:text-foreground"
-              >
-                {BRAND.contact.phone}
-              </a>
             </div>
             <div className="mt-3 text-xs uppercase tracking-wide text-muted-foreground/70">
               By appointment only

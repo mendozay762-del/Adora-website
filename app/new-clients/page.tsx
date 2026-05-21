@@ -20,7 +20,7 @@ const STEPS = [
   {
     n: "02",
     title: "Secure Your Slot",
-    body: `A non-refundable $${BRAND.deposit} deposit via Zelle to ${BRAND.contact.phone} confirms your appointment. It goes toward your service total.`,
+    body: `A non-refundable $${BRAND.deposit} deposit via Zelle confirms your appointment and goes toward your service total. Payment details are shared when you book.`,
   },
   {
     n: "03",

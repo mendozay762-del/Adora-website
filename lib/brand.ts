@@ -14,7 +14,6 @@ export const BRAND = {
   },
 
   contact: {
-    phone: "469-685-2351",
     instagram: "adora.lashesandbrows",
     instagramUrl: "https://instagram.com/adora.lashesandbrows",
     tiktok: "adora.lashesandbrows",

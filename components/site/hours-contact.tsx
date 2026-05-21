@@ -68,17 +68,6 @@ export function HoursContact() {
           <ul className="mt-10 space-y-7 text-center">
             <li>
               <div className="text-[10px] uppercase tracking-[0.4em] text-accent">
-                Telephone
-              </div>
-              <a
-                href={`tel:${BRAND.contact.phone.replace(/[^0-9]/g, "")}`}
-                className="mt-2 inline-block text-base text-muted-foreground transition-colors hover:text-foreground"
-              >
-                {BRAND.contact.phone}
-              </a>
-            </li>
-            <li>
-              <div className="text-[10px] uppercase tracking-[0.4em] text-accent">
                 Instagram
               </div>
               <a

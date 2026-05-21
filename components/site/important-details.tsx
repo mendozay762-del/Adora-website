@@ -4,7 +4,7 @@ const ITEMS = [
   {
     icon: CircleDollarSign,
     title: "Deposits",
-    body: "A non-refundable $20 deposit via Zelle to 469-685-2351 is required to secure your appointment. This amount goes toward your total service cost.",
+    body: "A non-refundable $20 deposit via Zelle is required to secure your appointment and goes toward your total service cost. Payment details are shared when you book.",
   },
   {
     icon: UserMinus,
