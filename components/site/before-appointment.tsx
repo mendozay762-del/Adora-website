@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const BEFORE_RULES = [
@@ -65,12 +66,12 @@ export function BeforeAppointment() {
           </p>
           <div className="mt-8 flex justify-center">
             <Button
+              asChild
               size="lg"
-              disabled
-              aria-disabled="true"
-              className="cursor-not-allowed rounded-full bg-primary/40 px-8 text-primary-foreground/70"
+              variant="outline"
+              className="rounded-full border-accent/40 px-8"
             >
-              Go to Consent Form &mdash; Coming Soon
+              <Link href="/new-clients">New Client Info &amp; Consent</Link>
             </Button>
           </div>
         </div>

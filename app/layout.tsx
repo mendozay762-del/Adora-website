@@ -43,6 +43,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     alternateLocale: "es_US",
+    images: [
+      {
+        url: "/brand/headshot.jpg",
+        width: 1920,
+        height: 1080,
+        alt: BRAND.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${BRAND.name} · Dallas, Texas`,
+    description:
+      "An exclusive lash experience for the client who wants softness, precision, and sultry detail.",
+    images: ["/brand/headshot.jpg"],
   },
 };
 

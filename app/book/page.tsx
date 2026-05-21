@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InstagramIcon } from "@/components/site/icons";
 import { Footer } from "@/components/site/footer";
 import { TopNav } from "@/components/site/top-nav";
 import { Button } from "@/components/ui/button";
@@ -15,20 +16,26 @@ export default function BookPage() {
           BOOK
         </h1>
         <p className="mt-4 text-base text-muted-foreground">
-          The 3-step Vagaro &rarr; Zelle &rarr; DM flow comes online in Phase 2.
-          Vagaro setup is still in progress &mdash; the button below activates
-          once it&rsquo;s live. For now, DM &ldquo;LASHES&rdquo; on Instagram
-          to reserve.
+          Adora books exclusively through Instagram &mdash; it keeps things
+          personal and lets her tailor every appointment to you. Send a DM with
+          &ldquo;{BRAND.booking.keyword}&rdquo; and she&rsquo;ll get you on the
+          calendar.
         </p>
 
         <div className="mt-10 flex flex-wrap gap-4">
           <Button
+            asChild
             size="lg"
-            disabled
-            aria-disabled="true"
-            className="cursor-not-allowed rounded-full bg-primary/40 px-7 text-primary-foreground/70"
+            className="rounded-full px-7 shadow-[0_0_40px_-12px_oklch(0.74_0.22_300/0.7)]"
           >
-            Book on Vagaro &mdash; Coming Soon
+            <a
+              href={BRAND.booking.dmUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <InstagramIcon className="size-4" />
+              Book via Instagram
+            </a>
           </Button>
           <Button
             asChild
@@ -36,19 +43,15 @@ export default function BookPage() {
             variant="outline"
             className="rounded-full border-accent/40 px-7"
           >
-            <a
-              href={BRAND.contact.instagramUrl}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              DM &ldquo;LASHES&rdquo; on Instagram
+            <a href={`tel:${BRAND.contact.phone.replace(/[^0-9]/g, "")}`}>
+              Call {BRAND.contact.phone}
             </a>
           </Button>
         </div>
 
         <p className="mt-6 text-xs text-muted-foreground">
-          $20 Zelle deposit to {BRAND.contact.phone} secures your slot.
-          Non-refundable. 48-hour cancellation notice required.
+          A ${BRAND.deposit} Zelle deposit to {BRAND.contact.phone} secures your
+          slot. Non-refundable. 48-hour cancellation notice required.
         </p>
 
         <div className="mt-12">

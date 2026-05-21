@@ -4,9 +4,11 @@ export const BRAND = {
 
   pillars: ["Soft", "Luxurious", "Elevated"] as const,
 
-  bookingPlatform: "Vagaro",
-  bookingUrl: "https://www.vagaro.com/us04/adoralashesandbrows",
-  dmKeyword: "LASHES",
+  booking: {
+    method: "instagram-dm" as const,
+    dmUrl: "https://ig.me/m/adora.lashesandbrows",
+    keyword: "LASHES",
+  },
 
   contact: {
     phone: "469-685-2351",
@@ -24,27 +26,7 @@ export const BRAND = {
     zip: "75247",
   },
 
-  reference: {
-    name: "Reyna Beauty",
-    url: "https://reynaabeauty.as.me/schedule/f389fe85",
-  },
-
-  colors: {
-    softLavender: "#B89BD9",
-    vibrantPurple: "#A845E0",
-    dustyPurple: "#8F6FB0",
-    accentGold: "#C9A66B",
-    backgroundLight: "#FFFFFF",
-    backgroundDark: "#000000",
-    foreground: "#2B1F2D",
-  },
-
   offers: {
-    lashSet: {
-      priceUsd: 50,
-      copy: "$50 lash sets · Rest of the year",
-      validThrough: "2026-12-31",
-    },
     newClient: {
       discountUsd: 20,
       copy: "New clients get $20 OFF",

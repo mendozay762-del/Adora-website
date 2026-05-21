@@ -1,4 +1,5 @@
 import { ChevronDown } from "lucide-react";
+import { InstagramIcon } from "@/components/site/icons";
 import { Button } from "@/components/ui/button";
 import { BRAND } from "@/lib/brand";
 
@@ -71,28 +72,33 @@ export function ThankYouBooking() {
           </div>
         </div>
 
-        {/* Booking CTA — non-functional dud per current setup */}
+        {/* Booking CTA — Instagram DM */}
         <div className="mt-14 flex flex-col items-center gap-4">
           <Button
+            asChild
             size="lg"
-            disabled
-            aria-disabled="true"
-            className="cursor-not-allowed rounded-full bg-primary/40 px-10 text-primary-foreground/70"
+            className="rounded-full px-10 shadow-[0_0_40px_-12px_oklch(0.74_0.22_300/0.7)]"
           >
-            Book on Vagaro &mdash; Coming Soon
+            <a
+              href={BRAND.booking.dmUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <InstagramIcon className="size-4" />
+              Book via Instagram
+            </a>
           </Button>
           <p className="max-w-md text-center text-xs text-muted-foreground/80">
-            Booking opens once the Vagaro setup is complete. In the meantime,
-            you can DM{" "}
+            Adora books exclusively through Instagram. DM{" "}
             <a
-              href={BRAND.contact.instagramUrl}
+              href={BRAND.booking.dmUrl}
               target="_blank"
               rel="noreferrer noopener"
               className="text-accent hover:underline"
             >
-              &ldquo;LASHES&rdquo; to @{BRAND.contact.instagram}
+              &ldquo;{BRAND.booking.keyword}&rdquo; to @{BRAND.contact.instagram}
             </a>{" "}
-            to reserve a slot.
+            to reserve your appointment.
           </p>
         </div>
 

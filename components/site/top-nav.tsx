@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { MobileNav } from "@/components/site/mobile-nav";
 import { BRAND } from "@/lib/brand";
 
 const NAV_LINKS = [
   { label: "Book", href: "/book" },
+  { label: "New Clients", href: "/new-clients" },
   { label: "Portfolio", href: "/gallery" },
   { label: "Meet Adora", href: "/about" },
   { label: "Services", href: "/services" },
@@ -32,36 +34,21 @@ export function TopNav() {
         </Link>
 
         <nav
-          className="hidden flex-1 items-center justify-end gap-7 lg:flex"
+          className="hidden flex-1 items-center justify-end gap-6 lg:flex"
           aria-label="Primary"
         >
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-[11px] font-medium uppercase tracking-[0.28em] text-muted-foreground transition-colors hover:text-foreground"
+              className="text-[11px] font-medium uppercase tracking-[0.24em] text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        {/* Mobile/tablet: horizontal scroll fallback */}
-        <nav
-          className="flex flex-1 items-center justify-end gap-5 overflow-x-auto pl-4 lg:hidden [&::-webkit-scrollbar]:hidden"
-          style={{ scrollbarWidth: "none" }}
-          aria-label="Primary mobile"
-        >
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="shrink-0 text-[10px] font-medium uppercase tracking-[0.25em] text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        <MobileNav links={NAV_LINKS} />
       </div>
     </header>
   );

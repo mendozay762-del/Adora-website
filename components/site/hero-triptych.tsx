@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { InstagramIcon } from "@/components/site/icons";
+import { Button } from "@/components/ui/button";
 import { BRAND } from "@/lib/brand";
 
 const TRIPTYCH_LABELS = ["I", "II", "III"] as const;
@@ -9,11 +11,13 @@ export function HeroTriptych() {
       className="relative isolate w-full"
       aria-label={`${BRAND.name} hero`}
     >
-      <div className="grid h-[78vh] min-h-[560px] grid-cols-3 sm:h-[82vh]">
+      <div className="grid h-[78vh] min-h-[560px] grid-cols-1 sm:h-[82vh] sm:grid-cols-3">
         {TRIPTYCH_LABELS.map((label, i) => (
           <div
             key={label}
-            className="relative overflow-hidden border-r border-border/30 last:border-r-0"
+            className={`relative overflow-hidden border-r border-border/30 last:border-r-0 ${
+              i === 1 ? "" : "hidden sm:block"
+            }`}
           >
             <div
               aria-hidden
@@ -73,6 +77,26 @@ export function HeroTriptych() {
             </div>
             <p className="mt-4 text-[10px] uppercase tracking-[0.4em] text-muted-foreground/80">
               Located in {BRAND.address.city}, {BRAND.address.state}
+            </p>
+          </div>
+
+          <div className="pointer-events-auto mt-2 flex flex-col items-center gap-2">
+            <Button
+              asChild
+              size="lg"
+              className="rounded-full px-8 shadow-[0_0_40px_-12px_oklch(0.74_0.22_300/0.7)]"
+            >
+              <a
+                href={BRAND.booking.dmUrl}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <InstagramIcon className="size-4" />
+                Book via Instagram
+              </a>
+            </Button>
+            <p className="text-[9px] uppercase tracking-[0.35em] text-muted-foreground/70">
+              DM &ldquo;{BRAND.booking.keyword}&rdquo; to reserve
             </p>
           </div>
         </div>
