@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { getSupabaseEnv } from "@/lib/supabase/env";
 
+export const metadata = {
+  title: "Dashboard",
+  robots: { index: false, follow: false },
+};
+
 export default function DashboardPage() {
   const env = getSupabaseEnv();
 

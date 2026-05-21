@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { getSupabaseEnv } from "@/lib/supabase/env";
 
+export const metadata = {
+  title: "Admin Login",
+  robots: { index: false, follow: false },
+};
+
 export default function LoginPage() {
   const env = getSupabaseEnv();
 

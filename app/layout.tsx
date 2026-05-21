@@ -28,6 +28,10 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
+const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "https://adoralashesandbrows.com";
+
 export const metadata: Metadata = {
   title: {
     default: `${BRAND.name} · Dallas, Texas`,
@@ -35,7 +39,7 @@ export const metadata: Metadata = {
   },
   description:
     "Lashes that feel like a little secret — soft, luxurious, elevated. Lash extensions, brow lamination, and lash lifts in Dallas, Texas.",
-  metadataBase: new URL("https://adoralashesandbrows.com"),
+  metadataBase: new URL(siteUrl),
   openGraph: {
     title: `${BRAND.name} · Dallas, Texas`,
     description:
