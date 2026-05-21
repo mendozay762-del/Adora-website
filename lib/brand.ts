@@ -26,12 +26,6 @@ export const BRAND = {
     zip: "75247",
   },
 
-  offers: {
-    newClient: {
-      discountUsd: 20,
-      copy: "New clients get $20 OFF",
-    },
-  },
   deposit: 20,
 
   languages: {

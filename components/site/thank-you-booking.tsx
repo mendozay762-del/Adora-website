@@ -102,13 +102,12 @@ export function ThankYouBooking() {
           </p>
         </div>
 
-        {/* New-client callout — handwritten style */}
+        {/* Tag-us callout — handwritten style */}
         <div className="mt-16 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-6">
           <div className="text-center sm:text-right">
             <p className="text-xs uppercase tracking-[0.3em] text-foreground">
-              New clients get{" "}
-              <span className="text-accent">${BRAND.offers.newClient.discountUsd} OFF</span>{" "}
-              &hearts;
+              Tag us in your new set{" "}
+              <span className="text-accent">&hearts;</span>
             </p>
             <p className="mt-1 text-[10px] uppercase tracking-[0.4em] text-muted-foreground/70">
               @{BRAND.contact.instagram}

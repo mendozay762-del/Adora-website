@@ -101,9 +101,6 @@ export default function NewClientsPage() {
             is right here. A few minutes now means a smooth, relaxing, and
             beautiful appointment when you arrive.
           </p>
-          <p className="mt-6 text-sm uppercase tracking-[0.3em] text-accent">
-            New clients get ${BRAND.offers.newClient.discountUsd} off &hearts;
-          </p>
         </section>
 
         {/* How to book */}
