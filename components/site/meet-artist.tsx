@@ -9,7 +9,7 @@ export function MeetArtist() {
     >
       <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
         <div className="relative mx-auto w-full max-w-md md:max-w-none">
-          <div className="relative aspect-[3/4] overflow-hidden rounded-sm border border-accent/20 shadow-[0_0_80px_-20px_oklch(0.62_0.24_305/0.35)]">
+          <div className="relative aspect-[3/4] overflow-hidden rounded-sm border border-accent/20 shadow-[0_0_80px_-20px_oklch(0.62_0.24_300/0.35)]">
             <Image
               src="/brand/headshot.jpg"
               alt={`${BRAND.name} — Adora`}

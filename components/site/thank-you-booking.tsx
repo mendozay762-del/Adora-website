@@ -13,7 +13,7 @@ function PhonePlaceholder({ rotate }: { rotate: string }) {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 35%, oklch(0.55 0.18 305 / 0.45), oklch(0.08 0.02 295) 75%)",
+            "radial-gradient(ellipse at 50% 35%, oklch(0.55 0.18 300 / 0.45), oklch(0.08 0.02 300) 75%)",
         }}
       />
       <div className="absolute inset-x-0 top-2 flex justify-center">

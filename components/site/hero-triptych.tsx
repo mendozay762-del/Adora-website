@@ -21,10 +21,10 @@ export function HeroTriptych() {
               style={{
                 background:
                   i === 1
-                    ? "radial-gradient(ellipse at center, oklch(0.16 0.04 305) 0%, oklch(0.08 0.02 295) 70%)"
+                    ? "radial-gradient(ellipse at center, oklch(0.16 0.04 300) 0%, oklch(0.08 0.02 300) 70%)"
                     : i === 0
-                      ? "linear-gradient(165deg, oklch(0.12 0.04 305) 0%, oklch(0.07 0.015 295) 100%)"
-                      : "linear-gradient(195deg, oklch(0.10 0.03 300) 0%, oklch(0.07 0.015 295) 100%)",
+                      ? "linear-gradient(165deg, oklch(0.12 0.04 300) 0%, oklch(0.07 0.015 300) 100%)"
+                      : "linear-gradient(195deg, oklch(0.10 0.03 300) 0%, oklch(0.07 0.015 300) 100%)",
               }}
             />
             <div
@@ -32,7 +32,7 @@ export function HeroTriptych() {
               className="absolute inset-0 opacity-30"
               style={{
                 background:
-                  "radial-gradient(circle at 50% 40%, oklch(0.62 0.24 305 / 0.25), transparent 60%)",
+                  "radial-gradient(circle at 50% 40%, oklch(0.62 0.24 300 / 0.25), transparent 60%)",
               }}
             />
             <div className="absolute inset-x-0 bottom-6 flex justify-center">
