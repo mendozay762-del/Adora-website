@@ -12,9 +12,32 @@ export const metadata = {
     "How to reach Adora Lashes and Brows — booking, studio location, and hours in Dallas, Texas.",
 };
 
+const ADDRESS_QUERY = `${BRAND.address.line1} ${BRAND.address.suite}, ${BRAND.address.city}, ${BRAND.address.state} ${BRAND.address.zip}`;
 const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-  `${BRAND.address.line1} ${BRAND.address.suite}, ${BRAND.address.city}, ${BRAND.address.state} ${BRAND.address.zip}`,
+  ADDRESS_QUERY,
 )}`;
+const MAP_EMBED_URL = `https://maps.google.com/maps?q=${encodeURIComponent(
+  ADDRESS_QUERY,
+)}&output=embed`;
+
+const FAQ = [
+  {
+    q: "How long does a full lash set take?",
+    a: "Plan for 2 – 2.5 hours, depending on the volume you choose. Time on the bed is part of the experience — Dora won't rush.",
+  },
+  {
+    q: "Do you take walk-ins?",
+    a: "By appointment only. DM Dora at least a week ahead so she can fit you in — her calendar fills quickly.",
+  },
+  {
+    q: "What if I'm running late?",
+    a: "Send a heads-up DM as soon as you know. Dora will accommodate when she can; significantly late arrivals may need to reschedule so the next client's time isn't impacted. See Policies for the full window.",
+  },
+  {
+    q: "What's the difference between a Full Set and a Fill?",
+    a: "A Full Set is a fresh application from scratch. A Fill refills a set you already have, as long as 30 – 50% of the lashes are still on. More than four weeks since your last set counts as a new Full Set, not a Fill.",
+  },
+];
 
 function SectionTitle({ word }: { word: string }) {
   return (
@@ -31,6 +54,25 @@ function SectionTitle({ word }: { word: string }) {
         className="mt-5 h-px w-40 bg-gradient-to-r from-transparent via-gold/70 to-transparent"
       />
     </div>
+  );
+}
+
+function FAQItem({ q, a }: { q: string; a: string }) {
+  return (
+    <details className="group border-b border-border/40 last:border-b-0">
+      <summary className="flex cursor-pointer list-none items-start justify-between gap-4 px-6 py-5 text-left text-sm text-foreground transition-colors hover:bg-card/40 sm:text-base">
+        <span>{q}</span>
+        <span
+          aria-hidden
+          className="mt-1 text-lg leading-none text-accent transition-transform group-open:rotate-45"
+        >
+          +
+        </span>
+      </summary>
+      <div className="px-6 pb-6 text-sm leading-relaxed text-muted-foreground sm:text-base">
+        {a}
+      </div>
+    </details>
   );
 }
 
@@ -54,7 +96,7 @@ export default function ContactPage() {
           </p>
         </section>
 
-        {/* Booking block */}
+        {/* Booking */}
         <section className="mx-auto max-w-3xl px-6 pb-12">
           <SectionTitle word="BOOKING" />
           <div className="mt-12 rounded-md border border-accent/30 bg-card/40 p-8 text-center shadow-[0_0_60px_-30px_oklch(0.62_0.24_300/0.4)] sm:p-10">
@@ -78,7 +120,8 @@ export default function ContactPage() {
                 </a>
               </Button>
               <p className="text-[10px] uppercase tracking-[0.35em] text-muted-foreground/80">
-                DM &ldquo;{BRAND.booking.keyword}&rdquo; to reserve
+                DM &ldquo;{BRAND.booking.keyword}&rdquo; to reserve &middot;
+                Answered within 24 hrs
               </p>
             </div>
           </div>
@@ -122,6 +165,19 @@ export default function ContactPage() {
           </div>
         </section>
 
+        {/* Map */}
+        <section className="mx-auto max-w-3xl px-6 pb-12">
+          <div className="overflow-hidden rounded-md border border-border/40 shadow-[0_0_60px_-30px_oklch(0.62_0.24_300/0.3)]">
+            <iframe
+              title={`${BRAND.name} on the map`}
+              src={MAP_EMBED_URL}
+              className="block aspect-[16/9] w-full"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </section>
+
         {/* Hours */}
         <section className="mx-auto max-w-3xl px-6 py-12">
           <SectionTitle word="HOURS" />
@@ -145,6 +201,16 @@ export default function ContactPage() {
           <p className="mt-10 text-center text-[10px] uppercase tracking-[0.35em] text-accent/70">
             New schedule effective {BRAND.hours.effectiveDate}
           </p>
+        </section>
+
+        {/* FAQ */}
+        <section className="mx-auto max-w-3xl px-6 py-12">
+          <SectionTitle word="FAQ" />
+          <div className="mt-12 overflow-hidden rounded-md border border-border/40 bg-card/40">
+            {FAQ.map((item) => (
+              <FAQItem key={item.q} q={item.q} a={item.a} />
+            ))}
+          </div>
         </section>
 
         {/* Connect */}
