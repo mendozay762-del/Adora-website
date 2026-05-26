@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { InstagramIcon, TikTokIcon } from "@/components/site/icons";
 import { BRAND } from "@/lib/brand";
@@ -71,11 +70,6 @@ export function Footer() {
                 <TikTokIcon className="size-4 text-accent/80" />@
                 {BRAND.contact.tiktok}
               </a>
-            </li>
-            <li>
-              <Link href="/book" className="hover:text-foreground">
-                Book on Vagaro →
-              </Link>
             </li>
           </ul>
         </div>

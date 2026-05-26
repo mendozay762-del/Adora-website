@@ -169,7 +169,7 @@ export default function AftercarePage() {
           <SectionTitle word="WHEN TO REACH OUT" />
           <div className="mt-12 rounded-md border border-accent/30 bg-card/40 p-7 text-center sm:p-8">
             <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
-              DM Adora within 72 hours if you notice:
+              DM Dora within 72 hours if you notice:
             </p>
             <ul className="mx-auto mt-5 max-w-md space-y-2 text-sm text-muted-foreground sm:text-base">
               <li>Redness or irritation lasting more than 24 hours.</li>

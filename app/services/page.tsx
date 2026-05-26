@@ -8,7 +8,7 @@ import { BRAND } from "@/lib/brand";
 export const metadata = {
   title: "Services",
   description:
-    "Lash extensions, fills, brow lamination, tint, wax, and clean-up by Adora in Dallas, Texas.",
+    "Lash extensions, fills, brow lamination, tint, wax, and clean-up by Dora at Adora Lashes and Brows in Dallas, Texas.",
 };
 
 type Service = {

@@ -25,7 +25,7 @@ const POLICIES = [
   {
     icon: Clock,
     title: "Late / No-Show",
-    body: "Late arrivals may need to reschedule based on remaining time. No-shows are charged 100% of the service and will no longer be able to book with Adora.",
+    body: "Late arrivals may need to reschedule based on remaining time. No-shows are charged 100% of the service and will no longer be able to book with Dora.",
   },
 ];
 

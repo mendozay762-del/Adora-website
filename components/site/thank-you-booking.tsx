@@ -89,7 +89,7 @@ export function ThankYouBooking() {
             </a>
           </Button>
           <p className="max-w-md text-center text-xs text-muted-foreground/80">
-            Adora books exclusively through Instagram. DM{" "}
+            Dora books exclusively through Instagram. DM{" "}
             <a
               href={BRAND.booking.dmUrl}
               target="_blank"

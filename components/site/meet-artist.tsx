@@ -12,7 +12,7 @@ export function MeetArtist() {
           <div className="relative aspect-[3/4] overflow-hidden rounded-sm border border-accent/20 shadow-[0_0_80px_-20px_oklch(0.62_0.24_300/0.35)]">
             <Image
               src="/brand/headshot.jpg"
-              alt={`${BRAND.name} — Adora`}
+              alt={`${BRAND.name} — ${BRAND.artist}`}
               fill
               sizes="(min-width: 768px) 28rem, 24rem"
               className="object-cover object-top"
@@ -36,7 +36,7 @@ export function MeetArtist() {
           </h2>
 
           <p className="mt-8 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Hello gorgeous &mdash; I&rsquo;m Adora, your Dallas lash and brow
+            Hello gorgeous &mdash; I&rsquo;m Dora, your Dallas lash and brow
             artist. I craft lashes that feel like a little secret &mdash; soft,
             fluttery, and expensive-looking, made for the client who wants{" "}
             <span className="italic text-foreground/90">

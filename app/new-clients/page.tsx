@@ -8,14 +8,14 @@ import { BRAND } from "@/lib/brand";
 export const metadata = {
   title: "New Clients",
   description:
-    "Everything new clients need before their first lash or brow appointment with Adora — booking, deposit, pre-care, studio policies, and consent.",
+    "Everything new clients need before their first lash or brow appointment with Dora at Adora Lashes and Brows — booking, deposit, pre-care, studio policies, and consent.",
 };
 
 const STEPS = [
   {
     n: "01",
     title: "Reach Out",
-    body: `Send a DM with "${BRAND.booking.keyword}" to @${BRAND.contact.instagram} on Instagram. Adora books exclusively through DMs so she can tailor every appointment to you.`,
+    body: `Send a DM with "${BRAND.booking.keyword}" to @${BRAND.contact.instagram} on Instagram. Dora books exclusively through DMs so she can tailor every appointment to you.`,
   },
   {
     n: "02",
@@ -53,7 +53,7 @@ const POLICIES = [
   },
   {
     title: "No Phone Use",
-    body: "Phones must stay down during your appointment. Your eyes stay closed and still so Adora can do her best, safest work.",
+    body: "Phones must stay down during your appointment. Your eyes stay closed and still so Dora can do her best, safest work.",
   },
   {
     title: "Fills",

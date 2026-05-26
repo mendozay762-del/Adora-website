@@ -23,7 +23,7 @@ export default function GlobalError({ reset }: { error: Error; reset: () => void
           Something went wrong
         </h1>
         <p style={{ maxWidth: "28rem", fontSize: "0.9rem", color: "#b9a9c6", lineHeight: 1.6 }}>
-          Sorry about that. Please try again, or reach Adora directly on
+          Sorry about that. Please try again, or reach Dora directly on
           Instagram @adora.lashesandbrows.
         </p>
         <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", justifyContent: "center" }}>

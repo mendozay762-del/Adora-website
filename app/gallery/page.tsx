@@ -8,7 +8,7 @@ import { BRAND } from "@/lib/brand";
 
 export const metadata = {
   title: "Portfolio",
-  description: "Selected lash and brow work by Adora — Dallas, Texas.",
+  description: "Selected lash and brow work by Dora at Adora Lashes and Brows — Dallas, Texas.",
 };
 
 const FEATURED = {

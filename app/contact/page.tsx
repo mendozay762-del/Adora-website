@@ -48,7 +48,7 @@ export default function ContactPage() {
             CONTACT
           </h1>
           <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Adora books and answers questions personally through Instagram. Tap
+            Dora books and answers questions personally through Instagram. Tap
             below to reach her &mdash; or scroll for studio details, hours, and
             socials.
           </p>
@@ -59,7 +59,7 @@ export default function ContactPage() {
           <SectionTitle word="BOOKING" />
           <div className="mt-12 rounded-md border border-accent/30 bg-card/40 p-8 text-center shadow-[0_0_60px_-30px_oklch(0.62_0.24_300/0.4)] sm:p-10">
             <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
-              Adora books exclusively through Instagram DMs. It keeps things
+              Dora books exclusively through Instagram DMs. It keeps things
               personal and lets her tailor every appointment to you.
             </p>
             <div className="mt-7 flex flex-col items-center gap-3">

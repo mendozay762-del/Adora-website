@@ -16,7 +16,7 @@ export default function BookPage() {
           BOOK
         </h1>
         <p className="mt-4 text-base text-muted-foreground">
-          Adora books exclusively through Instagram &mdash; it keeps things
+          Dora books exclusively through Instagram &mdash; it keeps things
           personal and lets her tailor every appointment to you. Send a DM with
           &ldquo;{BRAND.booking.keyword}&rdquo; and she&rsquo;ll get you on the
           calendar.

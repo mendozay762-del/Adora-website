@@ -58,7 +58,7 @@ const BOOKING_POLICIES = [
       <p>
         No-shows are charged{" "}
         <Strong>100% of the reserved service amount</Strong> and lose the
-        privilege of booking with Adora. Life happens &mdash; reach out at
+        privilege of booking with Dora. Life happens &mdash; reach out at
         least 48 hours ahead and she&rsquo;ll work with you.
       </p>
     ),
@@ -69,7 +69,7 @@ const BOOKING_POLICIES = [
       <p>
         <Strong>All sales are final</Strong> and services are non-refundable.
         Deposit terms are covered above. If anything about your service needs
-        attention, message Adora within 72 hours so she can address it
+        attention, message Dora within 72 hours so she can address it
         directly.
       </p>
     ),
@@ -84,7 +84,7 @@ const STUDIO_POLICIES = [
         The studio is your private space.{" "}
         <Strong>No additional guests</Strong> can be accommodated, and{" "}
         <Strong>phones go down</Strong> during your appointment &mdash; your
-        eyes stay closed and still so Adora can do her best, safest work.
+        eyes stay closed and still so Dora can do her best, safest work.
         Please <Strong>arrive 15 minutes early</Strong> for a thorough
         consultation.
       </p>
@@ -112,7 +112,7 @@ const STUDIO_POLICIES = [
     title: "Photography & Content",
     body: (
       <p>
-        Adora films and photographs her work for Instagram and her other
+        Dora films and photographs her work for Instagram and her other
         platforms. If anything from your appointment may be shared publicly,{" "}
         <Strong>she&rsquo;ll ask you in person</Strong> and have you sign a
         consent form before anything is posted.
@@ -217,7 +217,7 @@ export default function PoliciesPage() {
             Questions?
           </h2>
           <p className="mt-4 text-sm text-muted-foreground sm:text-base">
-            DM Adora and she&rsquo;ll walk you through anything before you
+            DM Dora and she&rsquo;ll walk you through anything before you
             book.
           </p>
           <div className="mt-8 flex flex-col items-center gap-3">

@@ -23,7 +23,7 @@ export default function DashboardPage() {
           <p className="font-medium text-accent">Supabase not configured</p>
           <p className="mt-2 text-sm text-muted-foreground">
             The admin dashboard is scaffolded but inactive. Phase 5 wires this
-            up to a real Supabase project so Adora can edit the promo banner,
+            up to a real Supabase project so Dora can edit the promo banner,
             add testimonials, and upload gallery photos without code changes.
           </p>
         </div>

@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button";
 import { BRAND } from "@/lib/brand";
 
 export const metadata = {
-  title: "Meet Adora",
+  title: "Meet Dora",
   description:
-    "Meet Adora — the lash and brow artist behind Adora Lashes and Brows in Dallas, Texas.",
+    "Meet Dora — the lash and brow artist behind Adora Lashes and Brows in Dallas, Texas.",
 };
 
 const PILLARS = [
@@ -60,7 +60,7 @@ function SectionTitle({ word }: { word: string }) {
   );
 }
 
-export default function MeetAdoraPage() {
+export default function MeetDoraPage() {
   return (
     <>
       <TopNav />
@@ -72,7 +72,7 @@ export default function MeetAdoraPage() {
               <div className="relative aspect-[3/4] overflow-hidden rounded-sm border border-accent/20 shadow-[0_0_80px_-20px_oklch(0.62_0.24_300/0.35)]">
                 <Image
                   src="/brand/headshot.jpg"
-                  alt={`${BRAND.name} — Adora`}
+                  alt={`${BRAND.name} — ${BRAND.artist}`}
                   fill
                   sizes="(min-width: 768px) 28rem, 24rem"
                   className="object-cover object-top"
@@ -88,13 +88,13 @@ export default function MeetAdoraPage() {
                 Meet Your Lash Artist
               </p>
               <h1 className="mt-4 font-[family-name:var(--font-editorial)] text-6xl font-light leading-none tracking-[0.05em] text-foreground sm:text-7xl md:text-8xl">
-                ADORA
+                DORA
               </h1>
               <p className="mt-4 text-[10px] uppercase tracking-[0.4em] text-muted-foreground">
                 Lash &amp; Brow Artist &middot; Dallas, Texas
               </p>
               <p className="mt-8 text-base leading-relaxed text-muted-foreground sm:text-lg">
-                Hello gorgeous &mdash; I&rsquo;m Adora, the artist behind every
+                Hello gorgeous &mdash; I&rsquo;m Dora, the artist behind every
                 set that leaves this studio. My work is built around one idea:
                 that beauty should feel like a little secret. Soft. Sultry.
                 Personal. A set that looks like it was always yours, just

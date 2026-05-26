@@ -1,6 +1,7 @@
 export const BRAND = {
   name: "Adora Lashes and Brows",
   shortName: "Adora || L&B",
+  artist: "Dora",
 
   pillars: ["Soft", "Luxurious", "Elevated"] as const,
 

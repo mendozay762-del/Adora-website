@@ -16,7 +16,7 @@ export default function Error({
       </h1>
       <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
         Sorry about that &mdash; please try again. If it keeps happening, you
-        can always reach Adora directly on Instagram.
+        can always reach Dora directly on Instagram.
       </p>
       <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row">
         <Button

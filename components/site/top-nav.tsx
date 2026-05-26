@@ -7,7 +7,7 @@ const NAV_LINKS = [
   { label: "Book", href: "/book" },
   { label: "New Clients", href: "/new-clients" },
   { label: "Portfolio", href: "/gallery" },
-  { label: "Meet Adora", href: "/about" },
+  { label: "Meet Dora", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Aftercare", href: "/aftercare" },
   { label: "Policies", href: "/policies" },
