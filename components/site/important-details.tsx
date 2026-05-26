@@ -4,7 +4,7 @@ const ITEMS = [
   {
     icon: CircleDollarSign,
     title: "Deposits",
-    body: "A non-refundable $20 deposit via Zelle is required to secure your appointment and goes toward your total service cost. Payment details are shared when you book.",
+    body: "A non-refundable Zelle deposit secures your appointment and goes toward your service total. Lash extensions: $20 during the current promo. Deposit requirements for other services are confirmed when you book.",
   },
   {
     icon: UserMinus,

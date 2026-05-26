@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   Calendar,
   Clock,
@@ -19,7 +20,7 @@ const POLICIES = [
   {
     icon: ShieldCheck,
     title: "Refunds",
-    body: "All deposits are non-refundable. If you experience any issue with your service, please reach out within 72 hours so we can make it right.",
+    body: "All sales are final and services are non-refundable. Deposits are transferable once to a reschedule — miss that reschedule and a new deposit is required to rebook.",
   },
   {
     icon: Clock,
@@ -77,6 +78,15 @@ export function BookingPolicies() {
               </p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-14 text-center">
+          <Link
+            href="/policies"
+            className="text-[11px] uppercase tracking-[0.35em] text-accent transition-colors hover:text-foreground"
+          >
+            Read the full policies &rarr;
+          </Link>
         </div>
       </div>
     </section>
