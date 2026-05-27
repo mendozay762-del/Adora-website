@@ -28,9 +28,8 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
-const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : "https://adoralashesandbrows.com";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://adoralashesandbrows.com";
 
 export const metadata: Metadata = {
   title: {
