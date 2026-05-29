@@ -20,7 +20,7 @@ const STEPS = [
   {
     n: "02",
     title: "Secure Your Slot",
-    body: `A non-refundable $${BRAND.deposit} deposit via Zelle confirms your appointment and goes toward your service total. Payment details are shared when you book.`,
+    body: `A non-refundable Zelle deposit confirms your appointment and goes toward your total — $${BRAND.deposit} for Lash Extensions, with other amounts confirmed when you book. Lash Fills don't require a deposit. Payment details are shared in your DM.`,
   },
   {
     n: "03",
@@ -45,7 +45,7 @@ const POLICIES = [
   },
   {
     title: "Deposits",
-    body: `A non-refundable $${BRAND.deposit} Zelle deposit secures every appointment and is applied to your total.`,
+    body: `A non-refundable Zelle deposit secures every appointment except Lash Fills, which can be booked without one. Lash Extensions deposit is $${BRAND.deposit}; other amounts are confirmed when you book.`,
   },
   {
     title: "No Extra Guests",

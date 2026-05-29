@@ -23,7 +23,7 @@ const MAP_EMBED_URL = `https://maps.google.com/maps?q=${encodeURIComponent(
 const FAQ = [
   {
     q: "How long does a full lash set take?",
-    a: "Plan for 2 – 2.5 hours, depending on the volume you choose. Time on the bed is part of the experience — Dora won't rush.",
+    a: "Plan for 2.5 – 3 hours, depending on the volume you choose. Time on the bed is part of the experience — Dora won't rush.",
   },
   {
     q: "Do you take walk-ins?",

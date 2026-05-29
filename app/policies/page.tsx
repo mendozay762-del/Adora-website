@@ -40,14 +40,17 @@ const BOOKING_POLICIES = [
     body: (
       <>
         <p>
-          A <Strong>non-refundable deposit</Strong> secures every appointment.
-          Lash extensions during the current $50 promotion require a{" "}
-          <Strong>$20 Zelle deposit</Strong>. Deposit requirements for other
-          services are confirmed when you reach out to book.
+          A <Strong>non-refundable deposit</Strong> secures every appointment{" "}
+          <Strong>except Lash Fills</Strong>, which can be booked without one.
+          Lash Extensions during the current $50 promotion require a{" "}
+          <Strong>$20 Zelle deposit</Strong>; deposit amounts for other services
+          are confirmed when you reach out to book.
         </p>
         <p className="mt-3">
           Deposits are accepted <Strong>via Zelle only</Strong>. The remaining
-          balance is due the day of your appointment, by Zelle or cash.
+          balance is due the day of your appointment, by Zelle or cash.{" "}
+          <Strong>Sunday appointments</Strong> are by request and carry a{" "}
+          <Strong>$20 surcharge</Strong> on top of the service price.
         </p>
       </>
     ),

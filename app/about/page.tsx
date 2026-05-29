@@ -93,13 +93,31 @@ export default function MeetDoraPage() {
               <p className="mt-4 text-[10px] uppercase tracking-[0.4em] text-muted-foreground">
                 Lash &amp; Brow Artist &middot; Dallas, Texas
               </p>
-              <p className="mt-8 text-base leading-relaxed text-muted-foreground sm:text-lg">
-                Hello gorgeous &mdash; I&rsquo;m Dora, the artist behind every
-                set that leaves this studio. My work is built around one idea:
-                that beauty should feel like a little secret. Soft. Sultry.
-                Personal. A set that looks like it was always yours, just
-                refined.
+              <p className="mt-2 text-[10px] uppercase tracking-[0.4em] text-accent/80">
+                Certified in Lash Lifting + Brow Lamination
               </p>
+              <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
+                <p>
+                  Hello gorgeous &mdash; I&rsquo;m Dora, the artist behind every
+                  set that leaves this studio. Adora is my own work, on my own
+                  terms &mdash; a studio I&rsquo;ve spent the last few years
+                  building, one client at a time.
+                </p>
+                <p>
+                  Every appointment is private and every set is custom:
+                  Classic, Hybrid, Volume, or Mega Volume, paired to your eye
+                  shape and the look you&rsquo;re after. Soft, sultry,
+                  fluttery &mdash; sets that look expensive without looking
+                  overdone.
+                </p>
+                <p>
+                  You won&rsquo;t leave looking made over. You&rsquo;ll leave
+                  looking{" "}
+                  <span className="italic text-foreground/90">polished</span>
+                  &nbsp;&mdash; like the version of you that always knew what
+                  she was doing.
+                </p>
+              </div>
             </div>
           </div>
         </section>

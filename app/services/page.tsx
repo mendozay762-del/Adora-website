@@ -8,7 +8,7 @@ import { BRAND } from "@/lib/brand";
 export const metadata = {
   title: "Services",
   description:
-    "Lash extensions, fills, brow lamination, tint, wax, and clean-up by Dora at Adora Lashes and Brows in Dallas, Texas.",
+    "Lash extensions, fills, brow lamination, tint, and clean-up by Dora at Adora Lashes and Brows in Dallas, Texas.",
 };
 
 type Service = {
@@ -24,15 +24,15 @@ const LASHES: Service[] = [
   {
     name: "Lash Extensions",
     price: "$50",
-    meta: "Full set · Limited-time price through end of 2026",
+    meta: "Full set · ~2.5 – 3 hours · $50 price held through end of 2026",
     description:
-      "Semi-permanent lashes hand-applied one by one to your natural lashes, custom-built for your eye shape and the look you want — from soft natural to dramatic and fluttery. Lifted from the moment you wake up. Lasts 4–6 weeks with proper care and biweekly fills.",
+      "Semi-permanent lashes hand-applied one by one to your natural lashes, custom-built for your eye shape and the look you want — Classic, Hybrid, Volume, or Mega Volume. Lifted from the moment you wake up. Lasts 4 – 6 weeks with proper care and biweekly fills.",
     featured: true,
   },
   {
     name: "Lash Fill",
     price: "$35",
-    meta: "Every 2 weeks",
+    meta: "Every 2 weeks · ~1 – 1.5 hours · No deposit needed",
     description:
       "Maintenance for clients with an existing set. Worn lashes are gently removed and fresh ones placed so the set stays full, lifted, and even. Booked every two weeks for best retention.",
   },
@@ -42,38 +42,33 @@ const BROWS: Service[] = [
   {
     name: "Brow Lamination",
     price: "$60",
-    meta: "On its own",
+    meta: "On its own · ~45 minutes",
     description:
-      "A semi-permanent treatment that lifts and reshapes brow hairs upward into a fuller, brushed-up shape. Ideal for unruly, asymmetrical, or sparse brows. Lasts 6–8 weeks.",
+      "A semi-permanent treatment that lifts and reshapes brow hairs upward into a fuller, brushed-up shape. Ideal for unruly, asymmetrical, or sparse brows. Lasts 6 – 8 weeks.",
     outOfStock: true,
   },
   {
     name: "Brow Tint",
     price: "$60",
-    meta: "On its own",
+    meta: "On its own · ~30 minutes",
     description:
-      "A gentle dye applied to the brow hairs to add depth, balance gaps, and create a fuller, more defined frame for your face. Color fades softly over 3–6 weeks.",
+      "A gentle dye applied to the brow hairs to add depth, balance gaps, and create a fuller, more defined frame for your face. Color fades softly over 3 – 6 weeks.",
     outOfStock: true,
   },
   {
     name: "Brow Lamination + Tint",
     price: "$100",
-    meta: "Bundle · Save $20",
+    meta: "Bundle · ~1 hour · Save $20",
     description:
       "The full transformation — lift, set, and color in one appointment. The most-requested brow upgrade: fuller shape, richer color, all in one sitting.",
     outOfStock: true,
   },
   {
-    name: "Eyebrow Wax",
-    price: "$10",
-    description:
-      "A precise wax to remove unwanted hair around the brows and define a clean, polished shape tailored to your face. Quick, clean, and finished in minutes.",
-  },
-  {
     name: "Brow Clean Up",
     price: "$10",
+    meta: "~30 minutes",
     description:
-      "A tidy between full waxes — stray hairs trimmed and shaped to keep your brow line crisp.",
+      "A precise shape and tidy — stray hairs removed, brow line defined, finished clean and polished to frame your face.",
   },
 ];
 

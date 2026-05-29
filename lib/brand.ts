@@ -51,8 +51,8 @@ export const BRAND = {
       },
       {
         days: "Sunday",
-        value: "Closed",
-        note: null,
+        value: "By request",
+        note: "$20 surcharge on any service",
       },
     ],
   },
