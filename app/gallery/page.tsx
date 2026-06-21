@@ -19,7 +19,14 @@ const FEATURED = {
 const GRID = [
   { src: "/brand/IMG_0454.jpeg", alt: "Dramatic volume lash set, close up" },
   { src: "/brand/IMG_0363.jpeg", alt: "Fresh lash and brow set on a client" },
+  { src: "/brand/IMG_0547.jpeg", alt: "Soft glam volume lashes, side profile" },
+  { src: "/brand/IMG_6742.jpeg", alt: "Volume lash set, front view" },
 ];
+
+const WIDE = {
+  src: "/brand/IMG_7741.jpeg",
+  alt: "Both eyes volume lash set, close-up macro",
+};
 
 export default function PortfolioPage() {
   return (
@@ -71,6 +78,19 @@ export default function PortfolioPage() {
                 />
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Full-width macro */}
+        <section className="mx-auto max-w-5xl px-6 pb-16">
+          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-sm border border-accent/20 shadow-[0_0_80px_-20px_oklch(0.62_0.24_300/0.35)] sm:aspect-[5/2]">
+            <Image
+              src={WIDE.src}
+              alt={WIDE.alt}
+              fill
+              sizes="(min-width: 640px) 80vw, 100vw"
+              className="object-cover"
+            />
           </div>
         </section>
 
