@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { BRAND } from "@/lib/brand";
 
 const PANELS = [
-  { src: "/brand/IMG_0454.jpeg", alt: "Dramatic volume lash set, close up" },
   { src: "/brand/IMG_7763.jpeg", alt: "Wispy volume lash extensions on an open eye" },
+  { src: "/brand/IMG_0454.jpeg", alt: "Dramatic volume lash set, close up" },
   { src: "/brand/IMG_0363.jpeg", alt: "Fresh lash and brow set on a client" },
 ] as const;
 
