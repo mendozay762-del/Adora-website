@@ -97,6 +97,9 @@ export function HeroTriptych() {
             <p className="text-[9px] uppercase tracking-[0.35em] text-muted-foreground/70">
               DM &ldquo;{BRAND.booking.keyword}&rdquo; to reserve
             </p>
+            <p className="text-[9px] uppercase tracking-[0.35em] text-muted-foreground/70">
+              Zelle deposit &middot; {BRAND.booking.zelle}
+            </p>
           </div>
         </div>
       </div>
