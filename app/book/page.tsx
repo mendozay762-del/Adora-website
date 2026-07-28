@@ -21,7 +21,7 @@ const STEPS = [
   {
     n: "02",
     title: "Confirm with Deposit",
-    body: "A non-refundable Zelle deposit secures your slot. Payment details come back in DM.",
+    body: `A non-refundable Zelle deposit secures your slot — Zelle ${BRAND.booking.zelle}. Confirm your date in DM before sending.`,
   },
   {
     n: "03",

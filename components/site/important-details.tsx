@@ -1,10 +1,11 @@
 import { CircleDollarSign, Eye, RefreshCw, UserMinus } from "lucide-react";
+import { BRAND } from "@/lib/brand";
 
 const ITEMS = [
   {
     icon: CircleDollarSign,
     title: "Deposits",
-    body: "A non-refundable Zelle deposit secures your appointment and goes toward your service total. Lash extensions: $20 during the current promo. Deposit requirements for other services are confirmed when you book.",
+    body: `A non-refundable Zelle deposit (${BRAND.booking.zelle}) secures your appointment and goes toward your service total. Lash extensions: $20 during the current promo. Deposit requirements for other services are confirmed when you book.`,
   },
   {
     icon: UserMinus,

@@ -5,6 +5,7 @@ import {
   DollarSign,
   ShieldCheck,
 } from "lucide-react";
+import { BRAND } from "@/lib/brand";
 
 const POLICIES = [
   {
@@ -15,7 +16,7 @@ const POLICIES = [
   {
     icon: DollarSign,
     title: "Payment",
-    body: "Deposit accepted via Zelle only. The remaining balance is due the day of your appointment, payable through Zelle or cash.",
+    body: `Deposit accepted via Zelle only — ${BRAND.booking.zelle}. The remaining balance is due the day of your appointment, payable through Zelle or cash.`,
   },
   {
     icon: ShieldCheck,

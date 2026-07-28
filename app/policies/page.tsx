@@ -47,8 +47,9 @@ const BOOKING_POLICIES = [
           are confirmed when you reach out to book.
         </p>
         <p className="mt-3">
-          Deposits are accepted <Strong>via Zelle only</Strong>. The remaining
-          balance is due the day of your appointment, by Zelle or cash.{" "}
+          Deposits are accepted <Strong>via Zelle only</Strong> — send to{" "}
+          <Strong>{BRAND.booking.zelle}</Strong>. The remaining balance is due
+          the day of your appointment, by Zelle or cash.{" "}
           <Strong>Sunday appointments</Strong> are by request and carry a{" "}
           <Strong>$20 surcharge</Strong> on top of the service price.
         </p>

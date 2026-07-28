@@ -12,6 +12,7 @@ export const BRAND = {
     // its "Message" button is one tap from a DM.
     dmUrl: "https://instagram.com/adora.lashesandbrows",
     keyword: "LASHES",
+    zelle: "469-685-2351",
   },
 
   contact: {
