@@ -1,5 +1,7 @@
 import Image from "next/image";
+import { T } from "@/components/site/t";
 import { BRAND } from "@/lib/brand";
+import { MEET_ARTIST, PILLARS } from "@/lib/i18n/copy";
 
 export function MeetArtist() {
   return (
@@ -26,29 +28,23 @@ export function MeetArtist() {
 
         <div className="text-center md:text-left">
           <p className="text-[10px] uppercase tracking-[0.5em] text-muted-foreground">
-            Meet Your
+            <T {...MEET_ARTIST.eyebrow} />
           </p>
           <h2
             id="meet-artist-heading"
-            className="mt-4 font-[family-name:var(--font-editorial)] text-5xl font-light leading-none tracking-[0.05em] text-foreground sm:text-6xl md:text-7xl"
+            className="es-display-fit mt-4 font-[family-name:var(--font-editorial)] text-5xl font-light leading-none tracking-[0.05em] text-foreground sm:text-6xl md:text-7xl"
           >
-            LASH ARTIST
+            <T {...MEET_ARTIST.heading} />
           </h2>
 
           <p className="mt-8 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Hello gorgeous &mdash; I&rsquo;m Dora, your Dallas lash and brow
-            artist. I craft lashes that feel like a little secret &mdash; soft,
-            fluttery, and expensive-looking, made for the client who wants{" "}
-            <span className="italic text-foreground/90">
-              an experience, not a service
-            </span>
-            . Precision, softness, and sultry detail in every set.
+            <T {...MEET_ARTIST.bio} />
           </p>
 
           <div className="mt-10 flex items-center justify-center gap-4 md:justify-start">
-            {BRAND.pillars.map((pillar, i) => (
+            {PILLARS.map((pillar, i) => (
               <span
-                key={pillar}
+                key={String(pillar.en)}
                 className="flex items-center gap-4 text-[10px] uppercase tracking-[0.4em] text-accent"
               >
                 {i > 0 && (
@@ -56,7 +52,9 @@ export function MeetArtist() {
                     &middot;
                   </span>
                 )}
-                <span>&#9825; {pillar}</span>
+                <span>
+                  &#9825; <T {...pillar} />
+                </span>
               </span>
             ))}
           </div>

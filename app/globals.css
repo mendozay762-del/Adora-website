@@ -129,3 +129,48 @@
     color: var(--foreground);
   }
 }
+
+/* ---------------------------------------------------------------------------
+ * Bilingual copy (EN / ES)
+ *
+ * Every translatable string renders BOTH languages into the HTML via the <T>
+ * component, tagged with data-l="en" / data-l="es". The active language is
+ * held in a data-lang attribute on <html>, set before first paint by the
+ * inline script in app/layout.tsx and flipped by the EN | ES toggle.
+ *
+ * Hiding with display:none (rather than visibility or opacity) is deliberate:
+ * it removes the inactive copy from layout AND from the accessibility tree,
+ * so flex/grid rows size correctly and screen readers read only one language.
+ *
+ * !important guards against Tailwind display utilities (block, flex, inline-
+ * flex, and their responsive variants) landing on the same element.
+ * ------------------------------------------------------------------------- */
+html[data-lang="en"] [data-l="es"],
+html[data-lang="es"] [data-l="en"] {
+  display: none !important;
+}
+
+/* EN | ES toggle. The active language is highlighted from the same data-lang
+ * attribute that reveals the copy, so the correct button is already styled on
+ * first paint — before React hydrates — and never flashes the wrong state. */
+[data-lang-btn] {
+  color: var(--muted-foreground);
+}
+[data-lang-btn]:hover {
+  color: var(--foreground);
+}
+html[data-lang="en"] [data-lang-btn="en"],
+html[data-lang="es"] [data-lang-btn="es"] {
+  color: var(--accent);
+}
+
+/* Spanish display headings run 15–25% longer than their English counterparts
+ * ("LASH ARTIST" -> "ARTISTA DE PESTAÑAS"). Between 768px and 1023px the page
+ * splits into two columns, and at those widths a couple of the large editorial
+ * headings would spill past their column and let the page scroll sideways.
+ * Scoped to Spanish only, so English rendering is completely unaffected. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  html[data-lang="es"] .es-display-fit {
+    font-size: 3.25rem;
+  }
+}

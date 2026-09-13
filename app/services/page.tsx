@@ -2,8 +2,10 @@ import Link from "next/link";
 import { InstagramIcon } from "@/components/site/icons";
 import { Footer } from "@/components/site/footer";
 import { TopNav } from "@/components/site/top-nav";
+import { T, type CopyPair } from "@/components/site/t";
 import { Button } from "@/components/ui/button";
 import { BRAND } from "@/lib/brand";
+import { COMMON, SERVICES_PAGE as SP } from "@/lib/i18n/copy";
 
 export const metadata = {
   title: "Services",
@@ -12,64 +14,25 @@ export const metadata = {
 };
 
 type Service = {
-  name: string;
+  name: CopyPair;
   price: string;
-  meta?: string;
-  description: string;
+  meta?: CopyPair;
+  description: CopyPair;
   featured?: boolean;
   outOfStock?: boolean;
 };
 
+// Wording comes from the copy dictionary; prices stay here as page data.
 const LASHES: Service[] = [
-  {
-    name: "Lash Extensions",
-    price: "$50",
-    meta: "Full set · ~2.5 – 3 hours · $50 price held through end of 2026",
-    description:
-      "Semi-permanent lashes hand-applied one by one to your natural lashes, custom-built for your eye shape and the look you want — Classic, Hybrid, Volume, or Mega Volume. Lifted from the moment you wake up. Lasts 4 – 6 weeks with proper care and biweekly fills.",
-    featured: true,
-  },
-  {
-    name: "Lash Fill",
-    price: "$35",
-    meta: "Every 2 weeks · ~1 – 1.5 hours · No deposit needed",
-    description:
-      "Maintenance for clients with an existing set. Worn lashes are gently removed and fresh ones placed so the set stays full, lifted, and even. Booked every two weeks for best retention.",
-  },
+  { ...SP.lashExtensions, price: "$50", featured: true },
+  { ...SP.lashFill, price: "$35" },
 ];
 
 const BROWS: Service[] = [
-  {
-    name: "Brow Lamination",
-    price: "$60",
-    meta: "On its own · ~45 minutes",
-    description:
-      "A semi-permanent treatment that lifts and reshapes brow hairs upward into a fuller, brushed-up shape. Ideal for unruly, asymmetrical, or sparse brows. Lasts 6 – 8 weeks.",
-    outOfStock: true,
-  },
-  {
-    name: "Brow Tint",
-    price: "$60",
-    meta: "On its own · ~30 minutes",
-    description:
-      "A gentle dye applied to the brow hairs to add depth, balance gaps, and create a fuller, more defined frame for your face. Color fades softly over 3 – 6 weeks.",
-    outOfStock: true,
-  },
-  {
-    name: "Brow Lamination + Tint",
-    price: "$100",
-    meta: "Bundle · ~1 hour · Save $20",
-    description:
-      "The full transformation — lift, set, and color in one appointment. The most-requested brow upgrade: fuller shape, richer color, all in one sitting.",
-    outOfStock: true,
-  },
-  {
-    name: "Brow Clean Up",
-    price: "$10",
-    meta: "~30 minutes",
-    description:
-      "A precise shape and tidy — stray hairs removed, brow line defined, finished clean and polished to frame your face.",
-  },
+  { ...SP.browLamination, price: "$60", outOfStock: true },
+  { ...SP.browTint, price: "$60", outOfStock: true },
+  { ...SP.browLamTint, price: "$100", outOfStock: true },
+  { ...SP.browCleanUp, price: "$10" },
 ];
 
 function ServiceItem({ service }: { service: Service }) {
@@ -83,18 +46,18 @@ function ServiceItem({ service }: { service: Service }) {
     >
       {service.featured && (
         <span className="absolute -top-2 left-6 rounded-full bg-accent px-3 py-0.5 text-[9px] uppercase tracking-[0.3em] text-accent-foreground">
-          Featured
+          <T {...SP.featured} />
         </span>
       )}
       {service.outOfStock && (
         <span className="absolute right-4 top-4 rounded-full border border-border/50 bg-background/70 px-2.5 py-0.5 text-[9px] uppercase tracking-[0.3em] text-muted-foreground/80 backdrop-blur-sm">
-          Currently unavailable
+          <T {...SP.unavailable} />
         </span>
       )}
 
       <div className="flex flex-col items-start gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
         <h3 className="font-[family-name:var(--font-editorial)] text-2xl tracking-wide text-foreground sm:text-3xl">
-          {service.name}
+          <T {...service.name} />
         </h3>
         <span className="font-[family-name:var(--font-editorial)] text-2xl text-accent sm:text-3xl">
           {service.price}
@@ -103,7 +66,7 @@ function ServiceItem({ service }: { service: Service }) {
 
       {service.meta && (
         <p className="mt-2 text-[10px] uppercase tracking-[0.3em] text-muted-foreground/80">
-          {service.meta}
+          <T {...service.meta} />
         </p>
       )}
 
@@ -114,13 +77,13 @@ function ServiceItem({ service }: { service: Service }) {
             : "text-muted-foreground"
         }`}
       >
-        {service.description}
+        <T {...service.description} />
       </p>
     </li>
   );
 }
 
-function CategoryTitle({ word }: { word: string }) {
+function CategoryTitle({ word }: { word: CopyPair }) {
   return (
     <div className="flex flex-col items-center">
       <div
@@ -128,7 +91,7 @@ function CategoryTitle({ word }: { word: string }) {
         className="h-px w-40 bg-gradient-to-r from-transparent via-gold/70 to-transparent"
       />
       <h2 className="mt-5 text-center font-[family-name:var(--font-editorial)] text-4xl font-light tracking-[0.15em] text-foreground sm:text-5xl">
-        {word}
+        <T {...word} />
       </h2>
       <div
         aria-hidden
@@ -146,34 +109,32 @@ export default function ServicesPage() {
         {/* Hero */}
         <section className="mx-auto max-w-3xl px-6 py-20 text-center sm:py-24">
           <p className="text-[10px] uppercase tracking-[0.5em] text-accent">
-            The Menu
+            <T {...SP.eyebrow} />
           </p>
           <h1 className="mt-4 font-[family-name:var(--font-editorial)] text-5xl font-light tracking-[0.12em] text-foreground sm:text-6xl">
-            SERVICES
+            <T {...SP.heading} />
           </h1>
           <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Lashes and brows, crafted with intention. Every service is
-            customized to your features and the look you want &mdash; soft,
-            luxurious, elevated.
+            <T {...SP.intro} />
           </p>
         </section>
 
         {/* Lashes */}
         <section className="mx-auto max-w-3xl px-6 pb-16">
-          <CategoryTitle word="LASHES" />
+          <CategoryTitle word={SP.lashesTitle} />
           <ul className="mt-12 space-y-5">
             {LASHES.map((s) => (
-              <ServiceItem key={s.name} service={s} />
+              <ServiceItem key={String(s.name.en)} service={s} />
             ))}
           </ul>
         </section>
 
         {/* Brows */}
         <section className="mx-auto max-w-3xl px-6 py-16">
-          <CategoryTitle word="BROWS" />
+          <CategoryTitle word={SP.browsTitle} />
           <ul className="mt-12 space-y-5">
             {BROWS.map((s) => (
-              <ServiceItem key={s.name} service={s} />
+              <ServiceItem key={String(s.name.en)} service={s} />
             ))}
           </ul>
         </section>
@@ -182,12 +143,10 @@ export default function ServicesPage() {
         <section className="mx-auto max-w-3xl px-6 pb-16">
           <div className="rounded-md border border-border/40 bg-card/30 px-6 py-7 text-center">
             <p className="text-[10px] uppercase tracking-[0.4em] text-accent">
-              A note on availability
+              <T {...SP.availabilityEyebrow} />
             </p>
             <p className="mt-3 text-sm text-muted-foreground">
-              Brow Lamination and Brow Tint are temporarily unavailable while
-              product is restocked. Everything else is bookable now. See the
-              New Clients page for the full deposit and booking briefing.
+              <T {...SP.availabilityBody} />
             </p>
           </div>
         </section>
@@ -195,7 +154,7 @@ export default function ServicesPage() {
         {/* CTA */}
         <section className="mx-auto max-w-3xl px-6 py-20 text-center">
           <h2 className="font-[family-name:var(--font-display)] text-5xl text-foreground sm:text-6xl">
-            Ready to book?
+            <T {...SP.readyToBook} />
           </h2>
           <div className="mt-8 flex flex-col items-center gap-3">
             <Button
@@ -209,14 +168,14 @@ export default function ServicesPage() {
                 rel="noreferrer noopener"
               >
                 <InstagramIcon className="size-4" />
-                Book via Instagram
+                <T {...COMMON.bookViaInstagram} />
               </a>
             </Button>
             <Link
               href="/"
               className="mt-4 text-sm text-muted-foreground hover:text-foreground"
             >
-              &larr; Back to home
+              <T {...COMMON.backToHome} />
             </Link>
           </div>
         </section>

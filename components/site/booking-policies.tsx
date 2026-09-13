@@ -5,29 +5,14 @@ import {
   DollarSign,
   ShieldCheck,
 } from "lucide-react";
-import { BRAND } from "@/lib/brand";
+import { T } from "@/components/site/t";
+import { BOOKING_POLICIES } from "@/lib/i18n/copy";
 
 const POLICIES = [
-  {
-    icon: Calendar,
-    title: "Cancellations",
-    body: "I respectfully request at least 48 hours advance notice. Less than 24 hours = 50% of the reserved service. No-shows are charged 100% and lose future booking privileges.",
-  },
-  {
-    icon: DollarSign,
-    title: "Payment",
-    body: `Deposit accepted via Zelle only — ${BRAND.booking.zelle}. The remaining balance is due the day of your appointment, payable through Zelle or cash.`,
-  },
-  {
-    icon: ShieldCheck,
-    title: "Refunds",
-    body: "All sales are final and services are non-refundable. Deposits are transferable once to a reschedule — miss that reschedule and a new deposit is required to rebook.",
-  },
-  {
-    icon: Clock,
-    title: "Late / No-Show",
-    body: "Late arrivals may need to reschedule based on remaining time. No-shows are charged 100% of the service and will no longer be able to book with Dora.",
-  },
+  { icon: Calendar, ...BOOKING_POLICIES.cancellations },
+  { icon: DollarSign, ...BOOKING_POLICIES.payment },
+  { icon: ShieldCheck, ...BOOKING_POLICIES.refunds },
+  { icon: Clock, ...BOOKING_POLICIES.late },
 ];
 
 export function BookingPolicies() {
@@ -44,10 +29,10 @@ export function BookingPolicies() {
           />
           <h2 id="policies-heading" className="mt-6 text-center">
             <span className="block font-[family-name:var(--font-editorial)] text-5xl font-light tracking-[0.08em] text-foreground sm:text-6xl">
-              BOOKING
+              <T {...BOOKING_POLICIES.primary} />
             </span>
             <span className="-mt-3 block font-[family-name:var(--font-display)] text-5xl text-accent sm:-mt-4 sm:text-6xl">
-              Policies
+              <T {...BOOKING_POLICIES.secondary} />
             </span>
           </h2>
           <div
@@ -59,7 +44,7 @@ export function BookingPolicies() {
         <div className="mt-16 grid gap-10 sm:grid-cols-2 md:grid-cols-4 md:gap-0">
           {POLICIES.map((policy, i) => (
             <div
-              key={policy.title}
+              key={String(policy.title.en)}
               className={`flex flex-col items-center px-2 text-center md:px-6 ${
                 i !== POLICIES.length - 1
                   ? "md:border-r md:border-border/40"
@@ -72,10 +57,10 @@ export function BookingPolicies() {
                 strokeWidth={1.25}
               />
               <h3 className="mt-5 font-[family-name:var(--font-editorial)] text-2xl tracking-wide text-foreground">
-                {policy.title}
+                <T {...policy.title} />
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                {policy.body}
+                <T {...policy.body} />
               </p>
             </div>
           ))}
@@ -86,7 +71,7 @@ export function BookingPolicies() {
             href="/policies"
             className="text-[11px] uppercase tracking-[0.35em] text-accent transition-colors hover:text-foreground"
           >
-            Read the full policies &rarr;
+            <T {...BOOKING_POLICIES.readFull} />
           </Link>
         </div>
       </div>

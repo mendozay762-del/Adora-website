@@ -3,8 +3,10 @@ import Link from "next/link";
 import { InstagramIcon } from "@/components/site/icons";
 import { Footer } from "@/components/site/footer";
 import { TopNav } from "@/components/site/top-nav";
+import { T } from "@/components/site/t";
 import { Button } from "@/components/ui/button";
 import { BRAND } from "@/lib/brand";
+import { COMMON, GALLERY_PAGE as GP } from "@/lib/i18n/copy";
 
 export const metadata = {
   title: "Portfolio",
@@ -36,14 +38,13 @@ export default function PortfolioPage() {
         {/* Hero */}
         <section className="mx-auto max-w-3xl px-6 py-20 text-center sm:py-24">
           <p className="text-[10px] uppercase tracking-[0.5em] text-accent">
-            Selected Work
+            <T {...GP.eyebrow} />
           </p>
           <h1 className="mt-4 font-[family-name:var(--font-editorial)] text-5xl font-light tracking-[0.12em] text-foreground sm:text-6xl">
-            PORTFOLIO
+            <T {...GP.heading} />
           </h1>
           <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            A look at recent sets &mdash; each one custom-built to its client.
-            Soft natural to dramatic fluttery, never one-size-fits-all.
+            <T {...GP.intro} />
           </p>
         </section>
 
@@ -97,15 +98,13 @@ export default function PortfolioPage() {
         {/* Follow on IG */}
         <section className="mx-auto max-w-3xl px-6 py-16 text-center">
           <p className="text-[10px] uppercase tracking-[0.4em] text-accent">
-            More on Instagram
+            <T {...GP.moreOnIg} />
           </p>
           <h2 className="mt-4 font-[family-name:var(--font-display)] text-5xl text-foreground sm:text-6xl">
-            Follow Along
+            <T {...GP.followAlong} />
           </h2>
           <p className="mx-auto mt-6 max-w-md text-sm text-muted-foreground sm:text-base">
-            New sets posted weekly. Follow @{BRAND.contact.instagram} to see the
-            latest work &mdash; and DM &ldquo;{BRAND.booking.keyword}&rdquo; to
-            book your own.
+            <T {...GP.followBody} />
           </p>
           <div className="mt-8 flex flex-col items-center gap-3">
             <Button
@@ -119,14 +118,14 @@ export default function PortfolioPage() {
                 rel="noreferrer noopener"
               >
                 <InstagramIcon className="size-4" />
-                Follow on Instagram
+                <T {...GP.followCta} />
               </a>
             </Button>
             <Link
               href="/"
               className="mt-4 text-sm text-muted-foreground hover:text-foreground"
             >
-              &larr; Back to home
+              <T {...COMMON.backToHome} />
             </Link>
           </div>
         </section>

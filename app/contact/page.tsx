@@ -3,8 +3,10 @@ import { MapPin } from "lucide-react";
 import { InstagramIcon, TikTokIcon } from "@/components/site/icons";
 import { Footer } from "@/components/site/footer";
 import { TopNav } from "@/components/site/top-nav";
+import { T, type CopyPair } from "@/components/site/t";
 import { Button } from "@/components/ui/button";
 import { BRAND } from "@/lib/brand";
+import { COMMON, CONTACT_PAGE } from "@/lib/i18n/copy";
 
 export const metadata = {
   title: "Contact",
@@ -20,26 +22,7 @@ const MAP_EMBED_URL = `https://maps.google.com/maps?q=${encodeURIComponent(
   ADDRESS_QUERY,
 )}&output=embed`;
 
-const FAQ = [
-  {
-    q: "How long does a full lash set take?",
-    a: "Plan for 2.5 – 3 hours, depending on the volume you choose. Time on the bed is part of the experience — Dora won't rush.",
-  },
-  {
-    q: "Do you take walk-ins?",
-    a: "By appointment only. DM Dora at least a week ahead so she can fit you in — her calendar fills quickly.",
-  },
-  {
-    q: "What if I'm running late?",
-    a: "Send a heads-up DM as soon as you know. Dora will accommodate when she can; significantly late arrivals may need to reschedule so the next client's time isn't impacted. See Policies for the full window.",
-  },
-  {
-    q: "What's the difference between a Full Set and a Fill?",
-    a: "A Full Set is a fresh application from scratch. A Fill refills a set you already have, as long as 30 – 50% of the lashes are still on. More than four weeks since your last set counts as a new Full Set, not a Fill.",
-  },
-];
-
-function SectionTitle({ word }: { word: string }) {
+function SectionTitle({ word }: { word: CopyPair }) {
   return (
     <div className="flex flex-col items-center">
       <div
@@ -47,7 +30,7 @@ function SectionTitle({ word }: { word: string }) {
         className="h-px w-40 bg-gradient-to-r from-transparent via-gold/70 to-transparent"
       />
       <h2 className="mt-5 text-center font-[family-name:var(--font-editorial)] text-3xl font-light tracking-[0.15em] text-foreground sm:text-4xl">
-        {word}
+        <T {...word} />
       </h2>
       <div
         aria-hidden
@@ -57,11 +40,13 @@ function SectionTitle({ word }: { word: string }) {
   );
 }
 
-function FAQItem({ q, a }: { q: string; a: string }) {
+function FAQItem({ q, a }: { q: CopyPair; a: CopyPair }) {
   return (
     <details className="group border-b border-border/40 last:border-b-0">
       <summary className="flex cursor-pointer list-none items-start justify-between gap-4 px-6 py-5 text-left text-sm text-foreground transition-colors hover:bg-card/40 sm:text-base">
-        <span>{q}</span>
+        <span>
+          <T {...q} />
+        </span>
         <span
           aria-hidden
           className="mt-1 text-lg leading-none text-accent transition-transform group-open:rotate-45"
@@ -70,7 +55,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         </span>
       </summary>
       <div className="px-6 pb-6 text-sm leading-relaxed text-muted-foreground sm:text-base">
-        {a}
+        <T {...a} />
       </div>
     </details>
   );
@@ -84,25 +69,22 @@ export default function ContactPage() {
         {/* Hero */}
         <section className="mx-auto max-w-3xl px-6 py-20 text-center sm:py-24">
           <p className="text-[10px] uppercase tracking-[0.5em] text-accent">
-            Get in Touch
+            <T {...CONTACT_PAGE.eyebrow} />
           </p>
           <h1 className="mt-4 font-[family-name:var(--font-editorial)] text-5xl font-light tracking-[0.12em] text-foreground sm:text-6xl">
-            CONTACT
+            <T {...CONTACT_PAGE.heading} />
           </h1>
           <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Dora books and answers questions personally through Instagram. Tap
-            below to reach her &mdash; or scroll for studio details, hours, and
-            socials.
+            <T {...CONTACT_PAGE.intro} />
           </p>
         </section>
 
         {/* Booking */}
         <section className="mx-auto max-w-3xl px-6 pb-12">
-          <SectionTitle word="BOOKING" />
+          <SectionTitle word={CONTACT_PAGE.bookingTitle} />
           <div className="mt-12 rounded-md border border-accent/30 bg-card/40 p-8 text-center shadow-[0_0_60px_-30px_oklch(0.62_0.24_300/0.4)] sm:p-10">
             <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
-              Dora books exclusively through Instagram DMs. It keeps things
-              personal and lets her tailor every appointment to you.
+              <T {...CONTACT_PAGE.bookingBody} />
             </p>
             <div className="mt-7 flex flex-col items-center gap-3">
               <Button
@@ -116,12 +98,11 @@ export default function ContactPage() {
                   rel="noreferrer noopener"
                 >
                   <InstagramIcon className="size-4" />
-                  Book via Instagram
+                  <T {...COMMON.bookViaInstagram} />
                 </a>
               </Button>
               <p className="text-[10px] uppercase tracking-[0.35em] text-muted-foreground/80">
-                DM &ldquo;{BRAND.booking.keyword}&rdquo; to reserve &middot;
-                Answered within 24 hrs
+                <T {...CONTACT_PAGE.dmNote} />
               </p>
             </div>
           </div>
@@ -129,11 +110,11 @@ export default function ContactPage() {
 
         {/* Studio */}
         <section className="mx-auto max-w-3xl px-6 py-12">
-          <SectionTitle word="STUDIO" />
+          <SectionTitle word={CONTACT_PAGE.studioTitle} />
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border/40 bg-border/40 sm:grid-cols-2">
             <div className="bg-card/60 p-7 text-center sm:text-left">
               <p className="text-[10px] uppercase tracking-[0.4em] text-accent">
-                Address
+                <T {...CONTACT_PAGE.addressLabel} />
               </p>
               <address className="mt-3 not-italic text-base leading-relaxed text-muted-foreground">
                 {BRAND.address.line1}
@@ -149,17 +130,16 @@ export default function ContactPage() {
                 rel="noreferrer noopener"
                 className="mt-4 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.3em] text-accent transition-colors hover:text-foreground"
               >
-                <MapPin className="size-3.5" /> Open in Maps
+                <MapPin className="size-3.5" />{" "}
+                <T {...CONTACT_PAGE.openInMaps} />
               </a>
             </div>
             <div className="bg-card/60 p-7 text-center sm:text-left">
               <p className="text-[10px] uppercase tracking-[0.4em] text-accent">
-                Access
+                <T {...CONTACT_PAGE.accessLabel} />
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                By appointment only. Detailed building entry, parking, and
-                suite-finding instructions are sent with your booking
-                confirmation.
+                <T {...CONTACT_PAGE.accessBody} />
               </p>
             </div>
           </div>
@@ -180,42 +160,36 @@ export default function ContactPage() {
 
         {/* Hours */}
         <section className="mx-auto max-w-3xl px-6 py-12">
-          <SectionTitle word="HOURS" />
+          <SectionTitle word={CONTACT_PAGE.hoursTitle} />
           <ul className="mx-auto mt-12 max-w-md space-y-6 text-center">
             {BRAND.hours.schedule.map((row) => (
-              <li key={row.days}>
+              <li key={row.days.en}>
                 <div className="text-[10px] uppercase tracking-[0.4em] text-accent">
-                  {row.days}
+                  <T {...row.days} />
                 </div>
                 <div className="mt-2 text-base text-muted-foreground">
-                  {row.value}
+                  <T {...row.value} />
                 </div>
-                {row.note && (
-                  <div className="mt-1 text-[11px] italic text-muted-foreground/70">
-                    {row.note}
-                  </div>
-                )}
+                <div className="mt-1 text-[11px] italic text-muted-foreground/70">
+                  <T {...row.note} />
+                </div>
               </li>
             ))}
-          </ul>
-          <p className="mt-10 text-center text-[10px] uppercase tracking-[0.35em] text-accent/70">
-            New schedule effective {BRAND.hours.effectiveDate}
-          </p>
-        </section>
+          </ul>        </section>
 
         {/* FAQ */}
         <section className="mx-auto max-w-3xl px-6 py-12">
-          <SectionTitle word="FAQ" />
+          <SectionTitle word={CONTACT_PAGE.faqTitle} />
           <div className="mt-12 overflow-hidden rounded-md border border-border/40 bg-card/40">
-            {FAQ.map((item) => (
-              <FAQItem key={item.q} q={item.q} a={item.a} />
+            {CONTACT_PAGE.faq.map((item) => (
+              <FAQItem key={item.q.en} q={item.q} a={item.a} />
             ))}
           </div>
         </section>
 
         {/* Connect */}
         <section className="mx-auto max-w-3xl px-6 py-12">
-          <SectionTitle word="CONNECT" />
+          <SectionTitle word={CONTACT_PAGE.connectTitle} />
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border/40 bg-border/40 sm:grid-cols-2">
             <a
               href={BRAND.contact.instagramUrl}
@@ -254,7 +228,7 @@ export default function ContactPage() {
             href="/"
             className="text-sm text-muted-foreground hover:text-foreground"
           >
-            &larr; Back to home
+            <T {...COMMON.backToHome} />
           </Link>
         </section>
       </main>

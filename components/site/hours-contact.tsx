@@ -1,11 +1,13 @@
+import { T, type CopyPair } from "@/components/site/t";
 import { BRAND } from "@/lib/brand";
+import { HOURS } from "@/lib/i18n/copy";
 
 function EditorialHeading({
   primary,
   secondary,
 }: {
-  primary: string;
-  secondary: string;
+  primary: CopyPair;
+  secondary: CopyPair;
 }) {
   return (
     <div className="flex flex-col items-center">
@@ -14,11 +16,11 @@ function EditorialHeading({
         className="h-px w-48 bg-gradient-to-r from-transparent via-gold/70 to-transparent"
       />
       <h2 className="mt-6 text-center">
-        <span className="block font-[family-name:var(--font-editorial)] text-5xl font-light tracking-[0.08em] text-foreground sm:text-6xl">
-          {primary}
+        <span className="es-display-fit block font-[family-name:var(--font-editorial)] text-5xl font-light tracking-[0.08em] text-foreground sm:text-6xl">
+          <T {...primary} />
         </span>
         <span className="-mt-3 block font-[family-name:var(--font-display)] text-5xl text-accent sm:-mt-4 sm:text-6xl">
-          {secondary}
+          <T {...secondary} />
         </span>
       </h2>
       <div
@@ -37,33 +39,33 @@ export function HoursContact() {
     >
       <div className="mx-auto grid max-w-5xl gap-12 md:grid-cols-2 md:gap-0">
         <div className="md:border-r md:border-border/40 md:pr-12">
-          <EditorialHeading primary="BUSINESS" secondary="Hours" />
+          <EditorialHeading
+            primary={HOURS.businessPrimary}
+            secondary={HOURS.businessSecondary}
+          />
 
           <ul className="mt-10 space-y-7 text-center">
             {BRAND.hours.schedule.map((row) => (
-              <li key={row.days}>
+              <li key={row.days.en}>
                 <div className="text-[10px] uppercase tracking-[0.4em] text-accent">
-                  {row.days}
+                  <T {...row.days} />
                 </div>
                 <div className="mt-2 text-base text-muted-foreground">
-                  {row.value}
+                  <T {...row.value} />
                 </div>
-                {row.note && (
-                  <div className="mt-1 text-[11px] italic text-muted-foreground/70">
-                    {row.note}
-                  </div>
-                )}
+                <div className="mt-1 text-[11px] italic text-muted-foreground/70">
+                  <T {...row.note} />
+                </div>
               </li>
             ))}
           </ul>
-
-          <p className="mt-10 text-center text-[10px] uppercase tracking-[0.35em] text-accent/70">
-            New schedule effective {BRAND.hours.effectiveDate}
-          </p>
         </div>
 
         <div className="md:pl-12">
-          <EditorialHeading primary="CONTACT" secondary="Info" />
+          <EditorialHeading
+            primary={HOURS.contactPrimary}
+            secondary={HOURS.contactSecondary}
+          />
 
           <ul className="mt-10 space-y-7 text-center">
             <li>
@@ -94,7 +96,7 @@ export function HoursContact() {
             </li>
             <li>
               <div className="text-[10px] uppercase tracking-[0.4em] text-accent">
-                Studio
+                <T {...HOURS.studio} />
               </div>
               <address className="mt-2 not-italic text-base leading-relaxed text-muted-foreground">
                 {BRAND.address.line1}

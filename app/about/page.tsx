@@ -3,8 +3,10 @@ import Link from "next/link";
 import { InstagramIcon } from "@/components/site/icons";
 import { Footer } from "@/components/site/footer";
 import { TopNav } from "@/components/site/top-nav";
+import { T, type CopyPair } from "@/components/site/t";
 import { Button } from "@/components/ui/button";
 import { BRAND } from "@/lib/brand";
+import { ABOUT_PAGE as AP, COMMON } from "@/lib/i18n/copy";
 
 export const metadata = {
   title: "Meet Dora",
@@ -12,37 +14,7 @@ export const metadata = {
     "Meet Dora — the lash and brow artist behind Adora Lashes and Brows in Dallas, Texas.",
 };
 
-const PILLARS = [
-  {
-    word: "Soft",
-    body: "Lashes that feel like a part of you, not on top of you. Built around your eye shape, your natural fan, your daily life — never one-size-fits-all.",
-  },
-  {
-    word: "Luxurious",
-    body: "Time, attention, and detail in every appointment. No rush, no shortcuts, no two sets exactly alike.",
-  },
-  {
-    word: "Elevated",
-    body: "A private studio, an intimate experience, and a finish that holds up beautifully — for the client who notices the details.",
-  },
-];
-
-const STUDIO_EXPERIENCE = [
-  {
-    title: "Private",
-    body: "One client at a time. No extra guests, no phones — just your appointment, undivided.",
-  },
-  {
-    title: "Bespoke",
-    body: "Every set custom-built for your eye shape and the look you want. Soft natural to fluttery dramatic — your call.",
-  },
-  {
-    title: "Personal",
-    body: "Booking happens by Instagram DM, so we stay connected from your first message through your next fill.",
-  },
-];
-
-function SectionTitle({ word }: { word: string }) {
+function SectionTitle({ word }: { word: CopyPair }) {
   return (
     <div className="flex flex-col items-center">
       <div
@@ -50,7 +22,7 @@ function SectionTitle({ word }: { word: string }) {
         className="h-px w-40 bg-gradient-to-r from-transparent via-gold/70 to-transparent"
       />
       <h2 className="mt-5 text-center font-[family-name:var(--font-editorial)] text-4xl font-light tracking-[0.15em] text-foreground sm:text-5xl">
-        {word}
+        <T {...word} />
       </h2>
       <div
         aria-hidden
@@ -85,37 +57,26 @@ export default function MeetDoraPage() {
             </div>
             <div className="text-center md:text-left">
               <p className="text-[10px] uppercase tracking-[0.5em] text-accent">
-                Meet Your Lash Artist
+                <T {...AP.eyebrow} />
               </p>
               <h1 className="mt-4 font-[family-name:var(--font-editorial)] text-6xl font-light leading-none tracking-[0.05em] text-foreground sm:text-7xl md:text-8xl">
                 DORA
               </h1>
               <p className="mt-4 text-[10px] uppercase tracking-[0.4em] text-muted-foreground">
-                Lash &amp; Brow Artist &middot; Dallas, Texas
+                <T {...AP.role} />
               </p>
               <p className="mt-2 text-[10px] uppercase tracking-[0.4em] text-accent/80">
-                Certified in Lash Lifting + Brow Lamination
+                <T {...AP.certified} />
               </p>
               <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
                 <p>
-                  Hello gorgeous &mdash; I&rsquo;m Dora, the artist behind every
-                  set that leaves this studio. Adora is my own work, on my own
-                  terms &mdash; a studio I&rsquo;ve spent the last few years
-                  building, one client at a time.
+                  <T {...AP.bio1} />
                 </p>
                 <p>
-                  Every appointment is private and every set is custom:
-                  Classic, Hybrid, Volume, or Mega Volume, paired to your eye
-                  shape and the look you&rsquo;re after. Soft, sultry,
-                  fluttery &mdash; sets that look expensive without looking
-                  overdone.
+                  <T {...AP.bio2} />
                 </p>
                 <p>
-                  You won&rsquo;t leave looking made over. You&rsquo;ll leave
-                  looking{" "}
-                  <span className="italic text-foreground/90">polished</span>
-                  &nbsp;&mdash; like the version of you that always knew what
-                  she was doing.
+                  <T {...AP.bio3} />
                 </p>
               </div>
             </div>
@@ -124,15 +85,15 @@ export default function MeetDoraPage() {
 
         {/* Pillars */}
         <section className="mx-auto max-w-5xl px-6 py-16">
-          <SectionTitle word="MY APPROACH" />
+          <SectionTitle word={AP.approachTitle} />
           <div className="mt-14 grid gap-10 md:grid-cols-3">
-            {PILLARS.map((p) => (
-              <div key={p.word} className="text-center">
+            {AP.pillars.map((p) => (
+              <div key={p.word.en} className="text-center">
                 <h3 className="font-[family-name:var(--font-display)] text-5xl text-accent sm:text-6xl">
-                  {p.word}
+                  <T {...p.word} />
                 </h3>
                 <p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                  {p.body}
+                  <T {...p.body} />
                 </p>
               </div>
             ))}
@@ -141,15 +102,15 @@ export default function MeetDoraPage() {
 
         {/* Studio experience */}
         <section className="mx-auto max-w-5xl px-6 py-16">
-          <SectionTitle word="IN THE STUDIO" />
+          <SectionTitle word={AP.studioTitle} />
           <div className="mt-14 grid gap-px overflow-hidden rounded-md border border-border/40 bg-border/40 sm:grid-cols-3">
-            {STUDIO_EXPERIENCE.map((item) => (
-              <div key={item.title} className="bg-card/60 p-7 text-center">
+            {AP.studio.map((item) => (
+              <div key={item.title.en} className="bg-card/60 p-7 text-center">
                 <h3 className="font-[family-name:var(--font-editorial)] text-2xl tracking-wide text-foreground">
-                  {item.title}
+                  <T {...item.title} />
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {item.body}
+                  <T {...item.body} />
                 </p>
               </div>
             ))}
@@ -159,7 +120,7 @@ export default function MeetDoraPage() {
         {/* CTA */}
         <section className="mx-auto max-w-3xl px-6 py-20 text-center">
           <h2 className="font-[family-name:var(--font-display)] text-5xl text-foreground sm:text-6xl">
-            Let&rsquo;s create your set
+            <T {...AP.cta} />
           </h2>
           <div className="mt-8 flex flex-col items-center gap-3">
             <Button
@@ -173,14 +134,14 @@ export default function MeetDoraPage() {
                 rel="noreferrer noopener"
               >
                 <InstagramIcon className="size-4" />
-                Book via Instagram
+                <T {...COMMON.bookViaInstagram} />
               </a>
             </Button>
             <Link
               href="/"
               className="mt-4 text-sm text-muted-foreground hover:text-foreground"
             >
-              &larr; Back to home
+              <T {...COMMON.backToHome} />
             </Link>
           </div>
         </section>

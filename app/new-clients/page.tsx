@@ -2,8 +2,10 @@ import Link from "next/link";
 import { InstagramIcon } from "@/components/site/icons";
 import { Footer } from "@/components/site/footer";
 import { TopNav } from "@/components/site/top-nav";
+import { T, type CopyPair } from "@/components/site/t";
 import { Button } from "@/components/ui/button";
 import { BRAND } from "@/lib/brand";
+import { COMMON, NEW_CLIENTS_PAGE as NC } from "@/lib/i18n/copy";
 
 export const metadata = {
   title: "New Clients",
@@ -11,61 +13,9 @@ export const metadata = {
     "Everything new clients need before their first lash or brow appointment with Dora at Adora Lashes and Brows — booking, deposit, pre-care, studio policies, and consent.",
 };
 
-const STEPS = [
-  {
-    n: "01",
-    title: "Reach Out",
-    body: `Send a DM with "${BRAND.booking.keyword}" to @${BRAND.contact.instagram} on Instagram. Dora books exclusively through DMs so she can tailor every appointment to you.`,
-  },
-  {
-    n: "02",
-    title: "Secure Your Slot",
-    body: `A non-refundable Zelle deposit confirms your appointment and goes toward your total — $${BRAND.deposit} for Lash Extensions, with other amounts confirmed when you book. Lash Fills don't require a deposit. Zelle: ${BRAND.booking.zelle} — confirm your date in DM before sending.`,
-  },
-  {
-    n: "03",
-    title: "Sign Your Consent Form",
-    body: "First-time clients complete a quick consent form covering health history, allergies, and aftercare. It's sent with your confirmation or signed in studio.",
-  },
-];
+const STEPS = NC.steps.map((step, i) => ({ n: `0${i + 1}`, ...step }));
 
-const PRECARE = [
-  "Arrive 15 minutes early so we have time for a thorough consultation.",
-  "Come with a clean face — no makeup, mascara, contacts, or oil-based products near the eyes.",
-  "Avoid caffeine, energy drinks, and stimulants — comfort matters during a 2–3 hour appointment.",
-  "Wear warm, comfortable clothing.",
-  "Please reschedule if you have pink eye, a stye, or any eye irritation.",
-  "Do not curl your lashes before the appointment.",
-];
-
-const POLICIES = [
-  {
-    title: "Cancellations",
-    body: "48 hours advance notice is requested. Less than 24 hours is charged 50% of the service; no-shows are charged 100% and lose future booking privileges.",
-  },
-  {
-    title: "Deposits",
-    body: `A non-refundable Zelle deposit (${BRAND.booking.zelle}) secures every appointment except Lash Fills, which can be booked without one. Lash Extensions deposit is $${BRAND.deposit}; other amounts are confirmed when you book.`,
-  },
-  {
-    title: "No Extra Guests",
-    body: "The studio is your private space — please make arrangements ahead of time. No additional guests can be accommodated.",
-  },
-  {
-    title: "No Phone Use",
-    body: "Phones must stay down during your appointment. Your eyes stay closed and still so Dora can do her best, safest work.",
-  },
-  {
-    title: "Fills",
-    body: "Fills require 30–50% of lashes still on. Four or more weeks since your last set is considered a new full set, not a fill.",
-  },
-  {
-    title: "Payment",
-    body: `Deposits are paid via Zelle (${BRAND.booking.zelle}). The remaining balance is due the day of your appointment by Zelle or cash.`,
-  },
-];
-
-function SectionTitle({ children }: { children: React.ReactNode }) {
+function SectionTitle({ word }: { word: CopyPair }) {
   return (
     <div className="flex flex-col items-center">
       <div
@@ -73,7 +23,7 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
         className="h-px w-40 bg-gradient-to-r from-transparent via-gold/70 to-transparent"
       />
       <h2 className="mt-6 text-center font-[family-name:var(--font-editorial)] text-4xl font-light tracking-[0.1em] text-foreground sm:text-5xl">
-        {children}
+        <T {...word} />
       </h2>
       <div
         aria-hidden
@@ -91,21 +41,19 @@ export default function NewClientsPage() {
         {/* Intro */}
         <section className="mx-auto max-w-3xl px-6 py-20 text-center sm:py-24">
           <p className="text-[10px] uppercase tracking-[0.5em] text-accent">
-            Welcome
+            <T {...NC.eyebrow} />
           </p>
           <h1 className="mt-4 font-[family-name:var(--font-editorial)] text-5xl font-light tracking-[0.1em] text-foreground sm:text-6xl">
-            NEW CLIENTS
+            <T {...NC.heading} />
           </h1>
           <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Welcome gorgeous &mdash; everything you need before your first visit
-            is right here. A few minutes now means a smooth, relaxing, and
-            beautiful appointment when you arrive.
+            <T {...NC.intro} />
           </p>
         </section>
 
         {/* How to book */}
         <section className="mx-auto max-w-5xl px-6 py-12">
-          <SectionTitle>How To Book</SectionTitle>
+          <SectionTitle word={NC.howToBook} />
           <div className="mt-14 grid gap-8 md:grid-cols-3">
             {STEPS.map((step) => (
               <div
@@ -116,10 +64,10 @@ export default function NewClientsPage() {
                   {step.n}
                 </div>
                 <h3 className="mt-3 text-base font-medium uppercase tracking-[0.2em] text-foreground">
-                  {step.title}
+                  <T {...step.title} />
                 </h3>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  {step.body}
+                  <T {...step.body} />
                 </p>
               </div>
             ))}
@@ -128,9 +76,9 @@ export default function NewClientsPage() {
 
         {/* Before your appointment */}
         <section className="mx-auto max-w-4xl px-6 py-16">
-          <SectionTitle>Before Your Appointment</SectionTitle>
+          <SectionTitle word={NC.beforeAppointment} />
           <ul className="mt-14 grid gap-4 sm:grid-cols-2">
-            {PRECARE.map((rule, i) => (
+            {NC.precare.map((rule, i) => (
               <li
                 key={i}
                 className="flex gap-4 rounded-md border border-border/40 bg-card/40 px-6 py-5 text-sm leading-relaxed text-muted-foreground"
@@ -138,7 +86,9 @@ export default function NewClientsPage() {
                 <span className="font-[family-name:var(--font-editorial)] text-accent">
                   &mdash;
                 </span>
-                <span>{rule}</span>
+                <span>
+                  <T {...rule} />
+                </span>
               </li>
             ))}
           </ul>
@@ -146,15 +96,15 @@ export default function NewClientsPage() {
 
         {/* Studio policies */}
         <section className="mx-auto max-w-5xl px-6 py-16">
-          <SectionTitle>Studio Policies</SectionTitle>
+          <SectionTitle word={NC.studioPolicies} />
           <div className="mt-14 grid gap-px overflow-hidden rounded-md border border-border/40 bg-border/40 sm:grid-cols-2 lg:grid-cols-3">
-            {POLICIES.map((policy) => (
-              <div key={policy.title} className="bg-card/60 p-7">
+            {NC.policies.map((policy) => (
+              <div key={policy.title.en} className="bg-card/60 p-7">
                 <h3 className="font-[family-name:var(--font-editorial)] text-xl tracking-wide text-foreground">
-                  {policy.title}
+                  <T {...policy.title} />
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {policy.body}
+                  <T {...policy.body} />
                 </p>
               </div>
             ))}
@@ -164,7 +114,7 @@ export default function NewClientsPage() {
         {/* CTA */}
         <section className="mx-auto max-w-3xl px-6 py-20 text-center">
           <h2 className="font-[family-name:var(--font-display)] text-5xl text-foreground sm:text-6xl">
-            Ready when you are
+            <T {...NC.cta} />
           </h2>
           <div className="mt-8 flex flex-col items-center gap-3">
             <Button
@@ -178,14 +128,14 @@ export default function NewClientsPage() {
                 rel="noreferrer noopener"
               >
                 <InstagramIcon className="size-4" />
-                Book via Instagram
+                <T {...COMMON.bookViaInstagram} />
               </a>
             </Button>
             <Link
               href="/"
               className="mt-4 text-sm text-muted-foreground hover:text-foreground"
             >
-              &larr; Back to home
+              <T {...COMMON.backToHome} />
             </Link>
           </div>
         </section>

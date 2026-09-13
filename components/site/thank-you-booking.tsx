@@ -1,7 +1,9 @@
 import { ChevronDown } from "lucide-react";
 import { InstagramIcon } from "@/components/site/icons";
+import { T } from "@/components/site/t";
 import { Button } from "@/components/ui/button";
 import { BRAND } from "@/lib/brand";
+import { COMMON, THANK_YOU } from "@/lib/i18n/copy";
 
 function PhonePlaceholder({ rotate }: { rotate: string }) {
   return (
@@ -22,7 +24,7 @@ function PhonePlaceholder({ rotate }: { rotate: string }) {
       </div>
       <div className="absolute inset-0 flex items-center justify-center">
         <span className="text-[8px] uppercase tracking-[0.4em] text-muted-foreground/70">
-          Lash macro
+          <T {...THANK_YOU.phonePlaceholder} />
         </span>
       </div>
     </div>
@@ -53,13 +55,15 @@ export function ThankYouBooking() {
               id="thank-you-heading"
               className="font-[family-name:var(--font-display)] text-6xl leading-[0.9] text-foreground sm:text-7xl md:text-8xl"
             >
-              Thank You
+              <T {...THANK_YOU.headingTop} />
               <br />
-              <span className="text-accent">For Booking!</span>
+              <span className="text-accent">
+                <T {...THANK_YOU.headingBottom} />
+              </span>
             </h2>
 
             <p className="mt-6 text-[10px] uppercase tracking-[0.5em] text-muted-foreground">
-              Choose your appointment below
+              <T {...THANK_YOU.chooseBelow} />
             </p>
 
             <div className="mt-2 flex justify-center md:justify-start">
@@ -85,20 +89,11 @@ export function ThankYouBooking() {
               rel="noreferrer noopener"
             >
               <InstagramIcon className="size-4" />
-              Book via Instagram
+              <T {...COMMON.bookViaInstagram} />
             </a>
           </Button>
           <p className="max-w-md text-center text-xs text-muted-foreground/80">
-            Dora books exclusively through Instagram. DM{" "}
-            <a
-              href={BRAND.booking.dmUrl}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="text-accent hover:underline"
-            >
-              &ldquo;{BRAND.booking.keyword}&rdquo; to @{BRAND.contact.instagram}
-            </a>{" "}
-            to reserve your appointment.
+            <T {...THANK_YOU.dmNote} />
           </p>
         </div>
 
@@ -106,8 +101,7 @@ export function ThankYouBooking() {
         <div className="mt-16 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-6">
           <div className="text-center sm:text-right">
             <p className="text-xs uppercase tracking-[0.3em] text-foreground">
-              Tag us in your new set{" "}
-              <span className="text-accent">&hearts;</span>
+              <T {...THANK_YOU.tagUs} />
             </p>
             <p className="mt-1 text-[10px] uppercase tracking-[0.4em] text-muted-foreground/70">
               @{BRAND.contact.instagram}

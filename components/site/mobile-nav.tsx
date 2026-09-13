@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { T, type CopyPair } from "@/components/site/t";
 
-type NavLink = { label: string; href: string };
+type NavLink = { label: CopyPair; href: string };
 
 export function MobileNav({ links }: { links: readonly NavLink[] }) {
   const [open, setOpen] = useState(false);
@@ -27,7 +28,7 @@ export function MobileNav({ links }: { links: readonly NavLink[] }) {
     <div className="lg:hidden">
       <button
         type="button"
-        aria-label="Open menu"
+        aria-label="Open menu / Abrir menú"
         aria-expanded={open}
         onClick={() => setOpen(true)}
         className="flex size-10 items-center justify-center text-foreground"
@@ -40,7 +41,7 @@ export function MobileNav({ links }: { links: readonly NavLink[] }) {
           <div className="flex items-center justify-end px-4 py-5 sm:px-6">
             <button
               type="button"
-              aria-label="Close menu"
+              aria-label="Close menu / Cerrar menú"
               onClick={() => setOpen(false)}
               className="flex size-10 items-center justify-center text-foreground"
             >
@@ -58,7 +59,7 @@ export function MobileNav({ links }: { links: readonly NavLink[] }) {
                 onClick={() => setOpen(false)}
                 className="font-[family-name:var(--font-editorial)] text-3xl uppercase tracking-[0.15em] text-foreground transition-colors hover:text-accent"
               >
-                {link.label}
+                <T {...link.label} />
               </Link>
             ))}
           </nav>

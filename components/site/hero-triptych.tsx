@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { InstagramIcon } from "@/components/site/icons";
+import { T } from "@/components/site/t";
 import { Button } from "@/components/ui/button";
 import { BRAND } from "@/lib/brand";
+import { COMMON, HERO } from "@/lib/i18n/copy";
 
 const PANELS = [
   { src: "/brand/IMG_7763.jpeg", alt: "Wispy volume lash extensions on an open eye" },
@@ -60,7 +62,7 @@ export function HeroTriptych() {
           />
           <div className="flex flex-col items-center gap-3 text-center">
             <p className="text-[10px] uppercase tracking-[0.5em] text-accent">
-              Welcome to my booking site
+              <T {...HERO.welcome} />
             </p>
             <h1 className="font-[family-name:var(--font-editorial)] text-3xl font-light leading-[1.05] tracking-[0.12em] text-foreground sm:text-4xl md:text-[2.6rem]">
               ADORA LASHES
@@ -68,14 +70,18 @@ export function HeroTriptych() {
               AND BROWS
             </h1>
             <div className="mt-1 flex items-center gap-3 text-[10px] uppercase tracking-[0.45em] text-muted-foreground">
-              <span>Lashes</span>
+              <span>
+                <T {...HERO.lashes} />
+              </span>
               <span aria-hidden className="text-accent/60">
                 |
               </span>
-              <span>Brows</span>
+              <span>
+                <T {...HERO.brows} />
+              </span>
             </div>
             <p className="mt-4 text-[10px] uppercase tracking-[0.4em] text-muted-foreground/80">
-              Located in {BRAND.address.city}, {BRAND.address.state}
+              <T {...HERO.locatedIn} />
             </p>
           </div>
 
@@ -91,14 +97,14 @@ export function HeroTriptych() {
                 rel="noreferrer noopener"
               >
                 <InstagramIcon className="size-4" />
-                Book via Instagram
+                <T {...COMMON.bookViaInstagram} />
               </a>
             </Button>
             <p className="text-[9px] uppercase tracking-[0.35em] text-muted-foreground/70">
-              DM &ldquo;{BRAND.booking.keyword}&rdquo; to reserve
+              <T {...HERO.dmToReserve} />
             </p>
             <p className="text-[9px] uppercase tracking-[0.35em] text-muted-foreground/70">
-              Zelle deposit &middot; {BRAND.booking.zelle}
+              <T {...HERO.zelleDeposit} />
             </p>
           </div>
         </div>

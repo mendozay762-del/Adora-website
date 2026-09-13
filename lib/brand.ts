@@ -37,28 +37,34 @@ export const BRAND = {
     supported: ["en", "es"] as const,
   },
 
+  // Bookable appointment times. Both the homepage "Business Hours" panel and
+  // the /contact "Hours" panel read this array, so a change here updates
+  // every hours display on the site. Times themselves are language-neutral;
+  // only the day names and notes are translated.
   hours: {
-    effectiveDate: "June 1, 2026",
     schedule: [
       {
-        days: "Monday",
-        value: "8:00 AM & 1:00 PM & 5:00 PM",
-        note: "Three appointments daily",
+        days: { en: "Monday", es: "Lunes" },
+        value: { en: "8:00 AM & 1:00 PM & 5:00 PM", es: "8:00 AM & 1:00 PM & 5:00 PM" },
+        note: { en: "Three appointments daily", es: "Tres citas al día" },
       },
       {
-        days: "Tuesday – Friday",
-        value: "7:30 PM",
-        note: "One appointment daily",
+        days: { en: "Tuesday – Friday", es: "Martes – Viernes" },
+        value: { en: "7:30 PM", es: "7:30 PM" },
+        note: { en: "One appointment daily", es: "Una cita al día" },
       },
       {
-        days: "Saturday",
-        value: "3:00 PM & 6:00 PM",
-        note: "Two appointments daily",
+        days: { en: "Saturday", es: "Sábado" },
+        value: { en: "3:00 PM & 6:00 PM", es: "3:00 PM & 6:00 PM" },
+        note: { en: "Two appointments daily", es: "Dos citas al día" },
       },
       {
-        days: "Sunday",
-        value: "By request",
-        note: "$20 surcharge on any service",
+        days: { en: "Sunday", es: "Domingo" },
+        value: { en: "By request", es: "Por solicitud" },
+        note: {
+          en: "$20 surcharge on any service",
+          es: "$20 de recargo en cualquier servicio",
+        },
       },
     ],
   },

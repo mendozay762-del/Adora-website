@@ -64,15 +64,32 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Applies the visitor's saved language before the first paint.
+ *
+ * Both languages are present in the HTML (see `components/site/t.tsx`), and
+ * CSS reveals whichever one `data-lang` names. Running this synchronously in
+ * <head> — ahead of any rendering — is what stops a Spanish visitor from
+ * seeing a frame of English before the toggle applies.
+ *
+ * Wrapped in try/catch because localStorage throws in some privacy modes;
+ * if it does, the document simply stays on the English default.
+ */
+const LANG_BOOTSTRAP = `(function(){try{var l=localStorage.getItem("adora-lang");if(l!=="es")l="en";var d=document.documentElement;d.setAttribute("data-lang",l);d.setAttribute("lang",l);}catch(e){}})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
+      data-lang="en"
       data-scroll-behavior="smooth"
       className={`dark ${geistSans.variable} ${geistMono.variable} ${italianno.variable} ${cormorant.variable}`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: LANG_BOOTSTRAP }} />
+      </head>
       <body className="font-sans antialiased bg-background text-foreground overflow-x-clip">
         {children}
       </body>
