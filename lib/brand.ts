@@ -41,14 +41,19 @@ export const BRAND = {
     effectiveDate: "June 1, 2026",
     schedule: [
       {
-        days: "Monday – Thursday",
-        value: "5:00 PM & 8:00 PM",
-        note: "Two appointments daily",
+        days: "Monday",
+        value: "8:00 AM & 1:00 PM & 5:00 PM",
+        note: "Three appointments daily",
       },
       {
-        days: "Friday – Saturday",
-        value: "7:00 AM – 8:00 PM",
-        note: "Flexible booking window",
+        days: "Tuesday – Friday",
+        value: "7:30 PM",
+        note: "One appointment daily",
+      },
+      {
+        days: "Saturday",
+        value: "3:00 PM & 6:00 PM",
+        note: "Two appointments daily",
       },
       {
         days: "Sunday",
