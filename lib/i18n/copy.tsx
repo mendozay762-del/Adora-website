@@ -421,10 +421,13 @@ export const SERVICES_PAGE = {
     },
   },
   browLamTint: {
-    name: { en: "Brow Lamination + Tint", es: "Laminado de Cejas + Tinte" },
+    name: {
+      en: "Brow Lamination + Tint + Clean Up",
+      es: "Laminado de Cejas + Tinte + Limpieza",
+    },
     meta: {
-      en: "Bundle · ~1 hour · Save $20",
-      es: "Paquete · ~1 hora · Ahorra $20",
+      en: "Bundle · ~1 hour · Save $30",
+      es: "Paquete · ~1 hora · Ahorra $30",
     },
     description: {
       en: "The full transformation — lift, set, and color in one appointment. The most-requested brow upgrade: fuller shape, richer color, all in one sitting.",
