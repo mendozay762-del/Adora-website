@@ -51,7 +51,7 @@ export const BRAND = {
       {
         days: { en: "Saturday", es: "Sábado" },
         value: { en: "8:00 AM & 1:00 PM & 5:00 PM", es: "8:00 AM & 1:00 PM & 5:00 PM" },
-        note: { en: "Three appointments daily", es: "Tres citas al día" },
+        note: { en: "Three appointments available", es: "Tres citas disponibles" },
       },
       {
         days: { en: "Sunday", es: "Domingo" },
