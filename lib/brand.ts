@@ -44,19 +44,14 @@ export const BRAND = {
   hours: {
     schedule: [
       {
-        days: { en: "Monday", es: "Lunes" },
-        value: { en: "8:00 AM & 1:00 PM & 5:00 PM", es: "8:00 AM & 1:00 PM & 5:00 PM" },
-        note: { en: "Three appointments daily", es: "Tres citas al día" },
-      },
-      {
-        days: { en: "Tuesday – Friday", es: "Martes – Viernes" },
+        days: { en: "Monday – Friday", es: "Lunes – Viernes" },
         value: { en: "7:30 PM", es: "7:30 PM" },
         note: { en: "One appointment daily", es: "Una cita al día" },
       },
       {
         days: { en: "Saturday", es: "Sábado" },
-        value: { en: "3:00 PM & 6:00 PM", es: "3:00 PM & 6:00 PM" },
-        note: { en: "Two appointments daily", es: "Dos citas al día" },
+        value: { en: "8:00 AM & 1:00 PM & 5:00 PM", es: "8:00 AM & 1:00 PM & 5:00 PM" },
+        note: { en: "Three appointments daily", es: "Tres citas al día" },
       },
       {
         days: { en: "Sunday", es: "Domingo" },
