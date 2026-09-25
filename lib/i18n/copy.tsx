@@ -366,14 +366,6 @@ export const SERVICES_PAGE = {
     en: "Currently unavailable",
     es: "No disponible por ahora",
   },
-  availabilityEyebrow: {
-    en: "A note on availability",
-    es: "Nota sobre disponibilidad",
-  },
-  availabilityBody: {
-    en: "Brow Lamination and Brow Tint are temporarily unavailable while product is restocked. Everything else is bookable now. See the New Clients page for the full deposit and booking briefing.",
-    es: "El laminado de cejas y el tinte de cejas no están disponibles temporalmente mientras se resurte el producto. Todo lo demás se puede reservar ahora. Consulta la página de Clientas Nuevas para la información completa de depósitos y reservas.",
-  },
   readyToBook: { en: "Ready to book?", es: "¿Lista para reservar?" },
 
   lashExtensions: {

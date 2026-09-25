@@ -29,9 +29,9 @@ const LASHES: Service[] = [
 ];
 
 const BROWS: Service[] = [
-  { ...SP.browLamination, price: "$60", outOfStock: true },
-  { ...SP.browTint, price: "$60", outOfStock: true },
-  { ...SP.browLamTint, price: "$100", outOfStock: true },
+  { ...SP.browLamination, price: "$60" },
+  { ...SP.browTint, price: "$60" },
+  { ...SP.browLamTint, price: "$100" },
   { ...SP.browCleanUp, price: "$10" },
 ];
 
@@ -137,18 +137,6 @@ export default function ServicesPage() {
               <ServiceItem key={String(s.name.en)} service={s} />
             ))}
           </ul>
-        </section>
-
-        {/* Availability note */}
-        <section className="mx-auto max-w-3xl px-6 pb-16">
-          <div className="rounded-md border border-border/40 bg-card/30 px-6 py-7 text-center">
-            <p className="text-[10px] uppercase tracking-[0.4em] text-accent">
-              <T {...SP.availabilityEyebrow} />
-            </p>
-            <p className="mt-3 text-sm text-muted-foreground">
-              <T {...SP.availabilityBody} />
-            </p>
-          </div>
         </section>
 
         {/* CTA */}
