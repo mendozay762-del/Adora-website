@@ -26,6 +26,9 @@ type Service = {
 const LASHES: Service[] = [
   { ...SP.lashExtensions, price: "$50", featured: true },
   { ...SP.lashFill, price: "$35" },
+  // PLACEHOLDER PRICE — awaiting Dora's confirmation. $90 is taken from the
+  // old lib/services.ts, whose other prices all disagree with this page.
+  { ...SP.lashLift, price: "$90" },
 ];
 
 const BROWS: Service[] = [

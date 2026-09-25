@@ -390,6 +390,17 @@ export const SERVICES_PAGE = {
       es: "Mantenimiento para clientas que ya tienen un set. Se retiran con cuidado las pestañas desgastadas y se colocan nuevas para que el set se mantenga lleno, levantado y parejo. Se reserva cada dos semanas para una mejor retención.",
     },
   },
+  lashLift: {
+    name: { en: "Lash Lift", es: "Lifting de Pestañas" },
+    meta: {
+      en: "On its own · ~1 hour · No fills needed",
+      es: "Servicio individual · ~1 hora · Sin rellenos",
+    },
+    description: {
+      en: "A semi-permanent curl set into your own lashes from the base — no extensions, no fills, no daily upkeep. Ideal for healthy, short-to-medium lashes that want lift rather than length: softer and more natural than a full set. Lasts 6 – 8 weeks, until your natural lashes cycle out.",
+      es: "Un rizo semipermanente que se fija en tus propias pestañas desde la base — sin extensiones, sin rellenos, sin mantenimiento diario. Ideal para pestañas sanas, de largo corto a medio, que buscan elevación más que longitud: más suave y natural que un set completo. Dura de 6 a 8 semanas, hasta que tus pestañas completen su ciclo natural.",
+    },
+  },
   browLamination: {
     name: { en: "Brow Lamination", es: "Laminado de Cejas" },
     meta: {
