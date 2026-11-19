@@ -185,8 +185,8 @@ export const BOOKING_POLICIES = {
   late: {
     title: { en: "Late / No-Show", es: "Retardos / Inasistencias" },
     body: {
-      en: "Late arrivals may need to reschedule based on remaining time. No-shows are charged 100% of the service and will no longer be able to book with Dora.",
-      es: "Si llegas tarde, es posible que debas reprogramar según el tiempo disponible. Las inasistencias se cobran al 100% del servicio y ya no podrán reservar con Dora.",
+      en: "There is a 10 minute grace period for late arrivals. Past that, you may need to reschedule based on the time remaining. No-shows are charged 100% of the service and will no longer be able to book with Dora.",
+      es: "Hay una tolerancia de 10 minutos para llegar tarde. Pasado ese tiempo, es posible que debas reprogramar según el tiempo disponible. Las inasistencias se cobran al 100% del servicio y ya no podrán reservar con Dora.",
     },
   },
 };
@@ -1270,8 +1270,8 @@ export const CONTACT_PAGE = {
         es: "¿Qué pasa si voy tarde?",
       },
       a: {
-        en: "Send a heads-up DM as soon as you know. Dora will accommodate when she can; significantly late arrivals may need to reschedule so the next client's time isn't impacted. See Policies for the full window.",
-        es: "Avísale por DM en cuanto lo sepas. Dora te acomodará cuando le sea posible; si el retraso es considerable puede que debas reprogramar para no afectar el tiempo de la siguiente clienta. Consulta las Políticas para ver la ventana completa.",
+        en: "There is a 10 minute grace period. Send a heads-up DM as soon as you know you will be late — Dora will accommodate when she can, but arriving more than 10 minutes late may mean rescheduling so the next client's time isn't impacted. See Policies for the full window.",
+        es: "Hay una tolerancia de 10 minutos. Avísale por DM en cuanto sepas que vas tarde — Dora te acomodará cuando le sea posible, pero llegar más de 10 minutos tarde puede significar reprogramar para no afectar el tiempo de la siguiente clienta. Consulta las Políticas para ver la ventana completa.",
       },
     },
     {
